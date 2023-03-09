@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Login
 {
@@ -46,15 +47,25 @@ namespace Login
 
             if (dt.Rows.Count > 0)
             {
-                MessageBox.Show("Log in successful", "Welcome");
 
-                this.Hide();
-                home home = new home();
-                home.Show();
+                if (usernameTextBox.Text == "admin")
+                {
+                    MessageBox.Show("Welcome admin");
+                    adminHome home = new adminHome();
+                    home.Show();
+                    Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Welcome user");
+                    userHome home = new userHome();
+                    home.Show();
+                    Visible = false;
+                }
             }
             else
             {
-                MessageBox.Show("User does not exist!", "ERROR: 4");
+                MessageBox.Show("Incorrect credentials!", "ERROR: login_error");
             }
         }
     }
