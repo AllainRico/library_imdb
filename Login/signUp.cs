@@ -36,6 +36,7 @@ namespace Login
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True");
+            //change connection string kay ma error
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from usersTable where username='" + usernameTextBox.Text + "'", con);
             SqlDataAdapter sda = new SqlDataAdapter(cmd);

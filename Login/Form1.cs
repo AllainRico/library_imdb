@@ -38,6 +38,8 @@ namespace Login
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True");
+            //change this shit kay ma error ni bai
+            
             con.Open();
             string encpass = Aescryp.Encrypt(passwordTextBox.Text);
             SqlCommand cmd = new SqlCommand("select * from usersTable where username='" + usernameTextBox.Text + "' and pass = '" + encpass + "'", con);
