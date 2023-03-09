@@ -1,0 +1,35 @@
+Sign Up	
+	Check Unique /
+	Prompts /
+	Encryption Password /
+	Decrytion Function
+	Add Record /
+	Update Record
+Log In	
+	Check - Correctness /
+	Message/Successful/Not /
+	Load Main UI /
+Masterfiles	
+	Borrower
+	     View
+	     Search
+	     Add
+	     Update
+	     Status/Delete
+	Books
+	     View
+	     Search
+	     Add
+	     Update
+	     Status/Delete
+Transaction	
+	Conflict Avoidance
+	Borrow
+	     Decrease Inventory
+	Return
+	     Increase Inventory
+Reports	
+	Simple/Graphical
+	Date Filter
+	Labels/Headers
+	Print
