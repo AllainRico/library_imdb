@@ -28,14 +28,14 @@ namespace Login
         {
             Books books = new Books();
             books.Show();
-            Visible = true;
+            Visible = false;
         }
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Report report= new Report();
             report.Show();
-            Visible = true;
+            Visible = false;
         }
     }
 }

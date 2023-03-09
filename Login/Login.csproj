@@ -59,6 +59,11 @@
     <Compile Include="Books.Designer.cs">
       <DependentUpon>Books.cs</DependentUpon>
     </Compile>
+    <Compile Include="booksdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>booksdbDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Borrow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +112,9 @@
     <EmbeddedResource Include="adminHome.resx">
       <DependentUpon>adminHome.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Books.resx">
+      <DependentUpon>Books.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="borrower.resx">
       <DependentUpon>borrower.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +136,17 @@
     <EmbeddedResource Include="userHome.resx">
       <DependentUpon>userHome.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="booksdbDataSet.xsc">
+      <DependentUpon>booksdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="booksdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>booksdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="booksdbDataSet.xss">
+      <DependentUpon>booksdbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
