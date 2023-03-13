@@ -20,7 +20,15 @@ namespace Login
 
         private void searchbookbutton_Click(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=booksdb;Integrated Security=True");
+            con.Open();
 
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [booksdb].[dbo].[booksTable] where [Name] = '" + booknametext.Text + "' OR [Author] = '"+ authortext.Text + "'", con);
+            DataTable dtbl = new DataTable();
+            sqlData.Fill(dtbl);
+
+            dataGridView1.DataSource = dtbl;
         }
 
         private void displayallbutton_Click(object sender, EventArgs e)

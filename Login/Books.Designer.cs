@@ -34,8 +34,8 @@
             this.booksdbDataSet = new Login.booksdbDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.searchbookbutton = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.authortext = new System.Windows.Forms.TextBox();
+            this.booknametext = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.displayallbutton = new System.Windows.Forms.Button();
@@ -76,8 +76,8 @@
             // 
             this.groupBox1.Controls.Add(this.borrowbutton);
             this.groupBox1.Controls.Add(this.searchbookbutton);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.authortext);
+            this.groupBox1.Controls.Add(this.booknametext);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(570, 66);
@@ -96,19 +96,19 @@
             this.searchbookbutton.UseVisualStyleBackColor = true;
             this.searchbookbutton.Click += new System.EventHandler(this.searchbookbutton_Click);
             // 
-            // textBox2
+            // authortext
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 50);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(137, 20);
-            this.textBox2.TabIndex = 3;
+            this.authortext.Location = new System.Drawing.Point(80, 50);
+            this.authortext.Name = "authortext";
+            this.authortext.Size = new System.Drawing.Size(137, 20);
+            this.authortext.TabIndex = 3;
             // 
-            // textBox1
+            // booknametext
             // 
-            this.textBox1.Location = new System.Drawing.Point(80, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 2;
+            this.booknametext.Location = new System.Drawing.Point(80, 20);
+            this.booknametext.Name = "booknametext";
+            this.booknametext.Size = new System.Drawing.Size(137, 20);
+            this.booknametext.TabIndex = 2;
             // 
             // label2
             // 
@@ -191,8 +191,8 @@
         private booksdbDataSet booksdbDataSet;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button searchbookbutton;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox authortext;
+        private System.Windows.Forms.TextBox booknametext;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button displayallbutton;
