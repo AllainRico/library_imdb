@@ -43,5 +43,22 @@ namespace Login
 
             dataGridView1.DataSource= dtbl;
         }
+
+        private void booknamelabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addbookbutton_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=booksdb;Integrated Security=True");
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO [booksdb].[dbo].[booksTable] ([BookID],[Name],[Author],[Year],[Genre],[Quantity]) VALUES ('"+addbookidtext.Text +"','"+ addbooknametext.Text +"','" + addbookauthortext.Text + "', '"+ addyeartext.Text +"', '"+ addbookgenretext.Text +"', '"+ addbookquantitytext.Text +"');", con);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Book added successfully", "Success");
+        }
     }
 }
