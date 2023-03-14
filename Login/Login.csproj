@@ -115,6 +115,9 @@
     <EmbeddedResource Include="Books.resx">
       <DependentUpon>Books.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Borrow.resx">
+      <DependentUpon>Borrow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="borrower.resx">
       <DependentUpon>borrower.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +133,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report.resx">
+      <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Return.resx">
+      <DependentUpon>Return.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="signUp.resx">
       <DependentUpon>signUp.cs</DependentUpon>
     </EmbeddedResource>

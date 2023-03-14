@@ -17,10 +17,10 @@ Masterfiles
 	     Update
 	     Status/Delete
 	Books
-	     View
-	     Search
-	     Add
-	     Update
+	     View /
+	     Search /
+	     Add /
+	     Update 
 	     Status/Delete
 Transaction	
 	Conflict Avoidance

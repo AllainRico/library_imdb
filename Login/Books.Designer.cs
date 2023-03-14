@@ -40,20 +40,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.displayallbutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.booksdbDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.bookid = new System.Windows.Forms.Label();
-            this.addbookidtext = new System.Windows.Forms.TextBox();
-            this.booknamelabel = new System.Windows.Forms.Label();
-            this.addbooknametext = new System.Windows.Forms.TextBox();
-            this.bookauthorlabel = new System.Windows.Forms.Label();
-            this.addbookauthortext = new System.Windows.Forms.TextBox();
-            this.bookyeartext = new System.Windows.Forms.Label();
-            this.addyeartext = new System.Windows.Forms.TextBox();
-            this.bookgenrelabel = new System.Windows.Forms.Label();
-            this.addbookgenretext = new System.Windows.Forms.TextBox();
-            this.bookquantitylabel = new System.Windows.Forms.Label();
-            this.addbookquantitytext = new System.Windows.Forms.TextBox();
             this.addbookbutton = new System.Windows.Forms.Button();
+            this.addbookquantitytext = new System.Windows.Forms.TextBox();
+            this.bookquantitylabel = new System.Windows.Forms.Label();
+            this.addbookgenretext = new System.Windows.Forms.TextBox();
+            this.bookgenrelabel = new System.Windows.Forms.Label();
+            this.addyeartext = new System.Windows.Forms.TextBox();
+            this.bookyeartext = new System.Windows.Forms.Label();
+            this.addbookauthortext = new System.Windows.Forms.TextBox();
+            this.bookauthorlabel = new System.Windows.Forms.Label();
+            this.addbooknametext = new System.Windows.Forms.TextBox();
+            this.booknamelabel = new System.Windows.Forms.Label();
+            this.addbookidtext = new System.Windows.Forms.TextBox();
+            this.bookid = new System.Windows.Forms.Label();
+            this.booksdbDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSet)).BeginInit();
@@ -173,26 +173,86 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             // 
-            // booksdbDataSetBindingSource1
+            // addbookbutton
             // 
-            this.booksdbDataSetBindingSource1.DataSource = this.booksdbDataSet;
-            this.booksdbDataSetBindingSource1.Position = 0;
+            this.addbookbutton.Location = new System.Drawing.Point(147, 208);
+            this.addbookbutton.Name = "addbookbutton";
+            this.addbookbutton.Size = new System.Drawing.Size(70, 23);
+            this.addbookbutton.TabIndex = 12;
+            this.addbookbutton.Text = "Add";
+            this.addbookbutton.UseVisualStyleBackColor = true;
+            this.addbookbutton.Click += new System.EventHandler(this.addbookbutton_Click);
             // 
-            // bookid
+            // addbookquantitytext
             // 
-            this.bookid.AutoSize = true;
-            this.bookid.Location = new System.Drawing.Point(7, 28);
-            this.bookid.Name = "bookid";
-            this.bookid.Size = new System.Drawing.Size(49, 13);
-            this.bookid.TabIndex = 0;
-            this.bookid.Text = "Book ID:";
+            this.addbookquantitytext.Location = new System.Drawing.Point(80, 173);
+            this.addbookquantitytext.Name = "addbookquantitytext";
+            this.addbookquantitytext.Size = new System.Drawing.Size(137, 20);
+            this.addbookquantitytext.TabIndex = 11;
             // 
-            // addbookidtext
+            // bookquantitylabel
             // 
-            this.addbookidtext.Location = new System.Drawing.Point(81, 21);
-            this.addbookidtext.Name = "addbookidtext";
-            this.addbookidtext.Size = new System.Drawing.Size(137, 20);
-            this.addbookidtext.TabIndex = 1;
+            this.bookquantitylabel.AutoSize = true;
+            this.bookquantitylabel.Location = new System.Drawing.Point(10, 173);
+            this.bookquantitylabel.Name = "bookquantitylabel";
+            this.bookquantitylabel.Size = new System.Drawing.Size(49, 13);
+            this.bookquantitylabel.TabIndex = 10;
+            this.bookquantitylabel.Text = "Quantity:";
+            // 
+            // addbookgenretext
+            // 
+            this.addbookgenretext.Location = new System.Drawing.Point(80, 143);
+            this.addbookgenretext.Name = "addbookgenretext";
+            this.addbookgenretext.Size = new System.Drawing.Size(137, 20);
+            this.addbookgenretext.TabIndex = 9;
+            // 
+            // bookgenrelabel
+            // 
+            this.bookgenrelabel.AutoSize = true;
+            this.bookgenrelabel.Location = new System.Drawing.Point(8, 143);
+            this.bookgenrelabel.Name = "bookgenrelabel";
+            this.bookgenrelabel.Size = new System.Drawing.Size(39, 13);
+            this.bookgenrelabel.TabIndex = 8;
+            this.bookgenrelabel.Text = "Genre:";
+            // 
+            // addyeartext
+            // 
+            this.addyeartext.Location = new System.Drawing.Point(80, 115);
+            this.addyeartext.Name = "addyeartext";
+            this.addyeartext.Size = new System.Drawing.Size(137, 20);
+            this.addyeartext.TabIndex = 7;
+            // 
+            // bookyeartext
+            // 
+            this.bookyeartext.AutoSize = true;
+            this.bookyeartext.Location = new System.Drawing.Point(7, 115);
+            this.bookyeartext.Name = "bookyeartext";
+            this.bookyeartext.Size = new System.Drawing.Size(32, 13);
+            this.bookyeartext.TabIndex = 6;
+            this.bookyeartext.Text = "Year:";
+            // 
+            // addbookauthortext
+            // 
+            this.addbookauthortext.Location = new System.Drawing.Point(80, 86);
+            this.addbookauthortext.Name = "addbookauthortext";
+            this.addbookauthortext.Size = new System.Drawing.Size(137, 20);
+            this.addbookauthortext.TabIndex = 5;
+            // 
+            // bookauthorlabel
+            // 
+            this.bookauthorlabel.AutoSize = true;
+            this.bookauthorlabel.Location = new System.Drawing.Point(7, 89);
+            this.bookauthorlabel.Name = "bookauthorlabel";
+            this.bookauthorlabel.Size = new System.Drawing.Size(69, 13);
+            this.bookauthorlabel.TabIndex = 4;
+            this.bookauthorlabel.Text = "Book Author:";
+            // 
+            // addbooknametext
+            // 
+            this.addbooknametext.Location = new System.Drawing.Point(80, 53);
+            this.addbooknametext.Name = "addbooknametext";
+            this.addbooknametext.Size = new System.Drawing.Size(137, 20);
+            this.addbooknametext.TabIndex = 3;
             // 
             // booknamelabel
             // 
@@ -204,86 +264,26 @@
             this.booknamelabel.Text = "Book Name:";
             this.booknamelabel.Click += new System.EventHandler(this.booknamelabel_Click);
             // 
-            // addbooknametext
+            // addbookidtext
             // 
-            this.addbooknametext.Location = new System.Drawing.Point(80, 53);
-            this.addbooknametext.Name = "addbooknametext";
-            this.addbooknametext.Size = new System.Drawing.Size(137, 20);
-            this.addbooknametext.TabIndex = 3;
+            this.addbookidtext.Location = new System.Drawing.Point(81, 21);
+            this.addbookidtext.Name = "addbookidtext";
+            this.addbookidtext.Size = new System.Drawing.Size(137, 20);
+            this.addbookidtext.TabIndex = 1;
             // 
-            // bookauthorlabel
+            // bookid
             // 
-            this.bookauthorlabel.AutoSize = true;
-            this.bookauthorlabel.Location = new System.Drawing.Point(7, 89);
-            this.bookauthorlabel.Name = "bookauthorlabel";
-            this.bookauthorlabel.Size = new System.Drawing.Size(69, 13);
-            this.bookauthorlabel.TabIndex = 4;
-            this.bookauthorlabel.Text = "Book Author:";
+            this.bookid.AutoSize = true;
+            this.bookid.Location = new System.Drawing.Point(7, 28);
+            this.bookid.Name = "bookid";
+            this.bookid.Size = new System.Drawing.Size(49, 13);
+            this.bookid.TabIndex = 0;
+            this.bookid.Text = "Book ID:";
             // 
-            // addbookauthortext
+            // booksdbDataSetBindingSource1
             // 
-            this.addbookauthortext.Location = new System.Drawing.Point(80, 86);
-            this.addbookauthortext.Name = "addbookauthortext";
-            this.addbookauthortext.Size = new System.Drawing.Size(137, 20);
-            this.addbookauthortext.TabIndex = 5;
-            // 
-            // bookyeartext
-            // 
-            this.bookyeartext.AutoSize = true;
-            this.bookyeartext.Location = new System.Drawing.Point(7, 115);
-            this.bookyeartext.Name = "bookyeartext";
-            this.bookyeartext.Size = new System.Drawing.Size(32, 13);
-            this.bookyeartext.TabIndex = 6;
-            this.bookyeartext.Text = "Year:";
-            // 
-            // addyeartext
-            // 
-            this.addyeartext.Location = new System.Drawing.Point(80, 115);
-            this.addyeartext.Name = "addyeartext";
-            this.addyeartext.Size = new System.Drawing.Size(137, 20);
-            this.addyeartext.TabIndex = 7;
-            // 
-            // bookgenrelabel
-            // 
-            this.bookgenrelabel.AutoSize = true;
-            this.bookgenrelabel.Location = new System.Drawing.Point(8, 143);
-            this.bookgenrelabel.Name = "bookgenrelabel";
-            this.bookgenrelabel.Size = new System.Drawing.Size(39, 13);
-            this.bookgenrelabel.TabIndex = 8;
-            this.bookgenrelabel.Text = "Genre:";
-            // 
-            // addbookgenretext
-            // 
-            this.addbookgenretext.Location = new System.Drawing.Point(80, 143);
-            this.addbookgenretext.Name = "addbookgenretext";
-            this.addbookgenretext.Size = new System.Drawing.Size(137, 20);
-            this.addbookgenretext.TabIndex = 9;
-            // 
-            // bookquantitylabel
-            // 
-            this.bookquantitylabel.AutoSize = true;
-            this.bookquantitylabel.Location = new System.Drawing.Point(10, 173);
-            this.bookquantitylabel.Name = "bookquantitylabel";
-            this.bookquantitylabel.Size = new System.Drawing.Size(49, 13);
-            this.bookquantitylabel.TabIndex = 10;
-            this.bookquantitylabel.Text = "Quantity:";
-            // 
-            // addbookquantitytext
-            // 
-            this.addbookquantitytext.Location = new System.Drawing.Point(80, 173);
-            this.addbookquantitytext.Name = "addbookquantitytext";
-            this.addbookquantitytext.Size = new System.Drawing.Size(137, 20);
-            this.addbookquantitytext.TabIndex = 11;
-            // 
-            // addbookbutton
-            // 
-            this.addbookbutton.Location = new System.Drawing.Point(147, 208);
-            this.addbookbutton.Name = "addbookbutton";
-            this.addbookbutton.Size = new System.Drawing.Size(70, 23);
-            this.addbookbutton.TabIndex = 12;
-            this.addbookbutton.Text = "Add";
-            this.addbookbutton.UseVisualStyleBackColor = true;
-            this.addbookbutton.Click += new System.EventHandler(this.addbookbutton_Click);
+            this.booksdbDataSetBindingSource1.DataSource = this.booksdbDataSet;
+            this.booksdbDataSetBindingSource1.Position = 0;
             // 
             // Books
             // 
@@ -296,6 +296,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Books";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Books";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSetBindingSource)).EndInit();

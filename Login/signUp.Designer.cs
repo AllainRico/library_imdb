@@ -139,6 +139,7 @@
             this.ClientSize = new System.Drawing.Size(301, 305);
             this.Controls.Add(this.groupBox1);
             this.Name = "signUp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sign Up";
             this.Load += new System.EventHandler(this.signUp_Load);
             this.groupBox1.ResumeLayout(false);

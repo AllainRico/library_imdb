@@ -31,10 +31,10 @@
             this.usernamelabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.passwordLabel = new System.Windows.Forms.Label();
-            this.passwordTextBox = new System.Windows.Forms.TextBox();
-            this.loginbutton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
+            this.loginbutton = new System.Windows.Forms.Button();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.passwordLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,33 +70,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // passwordLabel
-            // 
-            this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(13, 69);
-            this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
-            this.passwordLabel.TabIndex = 2;
-            this.passwordLabel.Text = "Password";
-            // 
-            // passwordTextBox
-            // 
-            this.passwordTextBox.Location = new System.Drawing.Point(92, 69);
-            this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(126, 20);
-            this.passwordTextBox.TabIndex = 3;
-            this.passwordTextBox.UseSystemPasswordChar = true;
-            // 
-            // loginbutton
-            // 
-            this.loginbutton.Location = new System.Drawing.Point(16, 113);
-            this.loginbutton.Name = "loginbutton";
-            this.loginbutton.Size = new System.Drawing.Size(202, 26);
-            this.loginbutton.TabIndex = 4;
-            this.loginbutton.Text = "Log In";
-            this.loginbutton.UseVisualStyleBackColor = true;
-            this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
-            // 
             // registerButton
             // 
             this.registerButton.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -111,6 +84,33 @@
             this.registerButton.UseVisualStyleBackColor = false;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
+            // loginbutton
+            // 
+            this.loginbutton.Location = new System.Drawing.Point(16, 113);
+            this.loginbutton.Name = "loginbutton";
+            this.loginbutton.Size = new System.Drawing.Size(202, 26);
+            this.loginbutton.TabIndex = 4;
+            this.loginbutton.Text = "Log In";
+            this.loginbutton.UseVisualStyleBackColor = true;
+            this.loginbutton.Click += new System.EventHandler(this.loginbutton_Click);
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Location = new System.Drawing.Point(92, 69);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(126, 20);
+            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.UseSystemPasswordChar = true;
+            // 
+            // passwordLabel
+            // 
+            this.passwordLabel.AutoSize = true;
+            this.passwordLabel.Location = new System.Drawing.Point(13, 69);
+            this.passwordLabel.Name = "passwordLabel";
+            this.passwordLabel.Size = new System.Drawing.Size(53, 13);
+            this.passwordLabel.TabIndex = 2;
+            this.passwordLabel.Text = "Password";
+            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +118,7 @@
             this.ClientSize = new System.Drawing.Size(290, 270);
             this.Controls.Add(this.groupBox1);
             this.Name = "loginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log In";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
