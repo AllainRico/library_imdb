@@ -35,7 +35,7 @@ namespace Login
         private void signupbutton_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=usersdb;Integrated Security=True");
+            con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             //change connection string kay ma error
             con.Open();
             SqlCommand cmd = new SqlCommand("select * from usersTable where username='" + usernameTextBox.Text + "'", con);

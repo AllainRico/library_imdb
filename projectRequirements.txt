@@ -11,9 +11,9 @@ Log In
 	Load Main UI /
 Masterfiles	
 	Borrower
-	     View
-	     Search
-	     Add
+	     View /
+	     Search /
+	     Add /
 	     Update
 	     Status/Delete
 	Books
