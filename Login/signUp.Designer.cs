@@ -31,7 +31,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.confirmPasswordTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.registerButton = new System.Windows.Forms.Button();
+            this.signinButton = new System.Windows.Forms.Button();
             this.signupbutton = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -44,7 +44,7 @@
             // 
             this.groupBox1.Controls.Add(this.confirmPasswordTextBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.registerButton);
+            this.groupBox1.Controls.Add(this.signinButton);
             this.groupBox1.Controls.Add(this.signupbutton);
             this.groupBox1.Controls.Add(this.passwordTextBox);
             this.groupBox1.Controls.Add(this.passwordLabel);
@@ -75,19 +75,19 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Confirm Password";
             // 
-            // registerButton
+            // signinButton
             // 
-            this.registerButton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.registerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.registerButton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.registerButton.Location = new System.Drawing.Point(16, 171);
-            this.registerButton.Margin = new System.Windows.Forms.Padding(0);
-            this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(225, 23);
-            this.registerButton.TabIndex = 5;
-            this.registerButton.Text = "Already have an account?";
-            this.registerButton.UseVisualStyleBackColor = false;
-            this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
+            this.signinButton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.signinButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signinButton.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.signinButton.Location = new System.Drawing.Point(16, 171);
+            this.signinButton.Margin = new System.Windows.Forms.Padding(0);
+            this.signinButton.Name = "signinButton";
+            this.signinButton.Size = new System.Drawing.Size(225, 23);
+            this.signinButton.TabIndex = 5;
+            this.signinButton.Text = "Already have an account?";
+            this.signinButton.UseVisualStyleBackColor = false;
+            this.signinButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
             // signupbutton
             // 
@@ -151,7 +151,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button registerButton;
+        private System.Windows.Forms.Button signinButton;
         private System.Windows.Forms.Button signupbutton;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;

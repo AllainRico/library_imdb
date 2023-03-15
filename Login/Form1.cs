@@ -70,5 +70,12 @@ namespace Login
                 MessageBox.Show("Incorrect credentials!", "ERROR: login_error");
             }
         }
+
+        private void forgotpasswordbutton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            signUp reg = new signUp();
+            reg.Show();
+        }
     }
 }
