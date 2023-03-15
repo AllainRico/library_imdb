@@ -32,25 +32,27 @@
             this.displayallborrowerbutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.addborrowerbutton = new System.Windows.Forms.Button();
-            this.borrowerdatetext = new System.Windows.Forms.TextBox();
-            this.bookyeartext = new System.Windows.Forms.Label();
-            this.borrowerbookidtext = new System.Windows.Forms.TextBox();
-            this.bookauthorlabel = new System.Windows.Forms.Label();
-            this.borrowernametext = new System.Windows.Forms.TextBox();
-            this.booknamelabel = new System.Windows.Forms.Label();
+            this.usercontactnumbertext = new System.Windows.Forms.TextBox();
+            this.contactnumbertext = new System.Windows.Forms.Label();
+            this.userlastnametext = new System.Windows.Forms.TextBox();
+            this.userlastnamelabel = new System.Windows.Forms.Label();
+            this.userfirstnametext = new System.Windows.Forms.TextBox();
+            this.userfirstnamelabel = new System.Windows.Forms.Label();
             this.borroweruseridtext = new System.Windows.Forms.TextBox();
-            this.bookid = new System.Windows.Forms.Label();
+            this.userID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.searchbookbutton = new System.Windows.Forms.Button();
-            this.borrowsearchusernametext = new System.Windows.Forms.TextBox();
+            this.usersearchfirstname = new System.Windows.Forms.TextBox();
             this.borrowsearchuseridtext = new System.Windows.Forms.TextBox();
-            this.borrowerusernametextlabel = new System.Windows.Forms.Label();
+            this.userfirstnametextlabel = new System.Windows.Forms.Label();
             this.borroweruseridtextlabel = new System.Windows.Forms.Label();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userlastnametextlabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.borrowergridview)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -80,15 +82,15 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.addborrowerbutton);
-            this.groupBox2.Controls.Add(this.borrowerdatetext);
-            this.groupBox2.Controls.Add(this.bookyeartext);
-            this.groupBox2.Controls.Add(this.borrowerbookidtext);
-            this.groupBox2.Controls.Add(this.bookauthorlabel);
-            this.groupBox2.Controls.Add(this.borrowernametext);
-            this.groupBox2.Controls.Add(this.booknamelabel);
+            this.groupBox2.Controls.Add(this.usercontactnumbertext);
+            this.groupBox2.Controls.Add(this.contactnumbertext);
+            this.groupBox2.Controls.Add(this.userlastnametext);
+            this.groupBox2.Controls.Add(this.userlastnamelabel);
+            this.groupBox2.Controls.Add(this.userfirstnametext);
+            this.groupBox2.Controls.Add(this.userfirstnamelabel);
             this.groupBox2.Controls.Add(this.borroweruseridtext);
-            this.groupBox2.Controls.Add(this.bookid);
-            this.groupBox2.Location = new System.Drawing.Point(570, 191);
+            this.groupBox2.Controls.Add(this.userID);
+            this.groupBox2.Location = new System.Drawing.Point(570, 228);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(223, 179);
             this.groupBox2.TabIndex = 5;
@@ -104,86 +106,88 @@
             this.addborrowerbutton.UseVisualStyleBackColor = true;
             this.addborrowerbutton.Click += new System.EventHandler(this.addborrowerbutton_Click);
             // 
-            // borrowerdatetext
+            // usercontactnumbertext
             // 
-            this.borrowerdatetext.Location = new System.Drawing.Point(80, 115);
-            this.borrowerdatetext.Name = "borrowerdatetext";
-            this.borrowerdatetext.Size = new System.Drawing.Size(137, 20);
-            this.borrowerdatetext.TabIndex = 7;
+            this.usercontactnumbertext.Location = new System.Drawing.Point(100, 115);
+            this.usercontactnumbertext.Name = "usercontactnumbertext";
+            this.usercontactnumbertext.Size = new System.Drawing.Size(117, 20);
+            this.usercontactnumbertext.TabIndex = 7;
             // 
-            // bookyeartext
+            // contactnumbertext
             // 
-            this.bookyeartext.AutoSize = true;
-            this.bookyeartext.Location = new System.Drawing.Point(7, 115);
-            this.bookyeartext.Name = "bookyeartext";
-            this.bookyeartext.Size = new System.Drawing.Size(33, 13);
-            this.bookyeartext.TabIndex = 6;
-            this.bookyeartext.Text = "Date:";
+            this.contactnumbertext.AutoSize = true;
+            this.contactnumbertext.Location = new System.Drawing.Point(7, 115);
+            this.contactnumbertext.Name = "contactnumbertext";
+            this.contactnumbertext.Size = new System.Drawing.Size(87, 13);
+            this.contactnumbertext.TabIndex = 6;
+            this.contactnumbertext.Text = "Contact Number:";
             // 
-            // borrowerbookidtext
+            // userlastnametext
             // 
-            this.borrowerbookidtext.Location = new System.Drawing.Point(80, 86);
-            this.borrowerbookidtext.Name = "borrowerbookidtext";
-            this.borrowerbookidtext.Size = new System.Drawing.Size(137, 20);
-            this.borrowerbookidtext.TabIndex = 5;
+            this.userlastnametext.Location = new System.Drawing.Point(100, 86);
+            this.userlastnametext.Name = "userlastnametext";
+            this.userlastnametext.Size = new System.Drawing.Size(117, 20);
+            this.userlastnametext.TabIndex = 5;
             // 
-            // bookauthorlabel
+            // userlastnamelabel
             // 
-            this.bookauthorlabel.AutoSize = true;
-            this.bookauthorlabel.Location = new System.Drawing.Point(7, 89);
-            this.bookauthorlabel.Name = "bookauthorlabel";
-            this.bookauthorlabel.Size = new System.Drawing.Size(49, 13);
-            this.bookauthorlabel.TabIndex = 4;
-            this.bookauthorlabel.Text = "Book ID:";
+            this.userlastnamelabel.AutoSize = true;
+            this.userlastnamelabel.Location = new System.Drawing.Point(7, 89);
+            this.userlastnamelabel.Name = "userlastnamelabel";
+            this.userlastnamelabel.Size = new System.Drawing.Size(61, 13);
+            this.userlastnamelabel.TabIndex = 4;
+            this.userlastnamelabel.Text = "Last Name:";
             // 
-            // borrowernametext
+            // userfirstnametext
             // 
-            this.borrowernametext.Location = new System.Drawing.Point(80, 53);
-            this.borrowernametext.Name = "borrowernametext";
-            this.borrowernametext.Size = new System.Drawing.Size(137, 20);
-            this.borrowernametext.TabIndex = 3;
+            this.userfirstnametext.Location = new System.Drawing.Point(100, 53);
+            this.userfirstnametext.Name = "userfirstnametext";
+            this.userfirstnametext.Size = new System.Drawing.Size(117, 20);
+            this.userfirstnametext.TabIndex = 3;
             // 
-            // booknamelabel
+            // userfirstnamelabel
             // 
-            this.booknamelabel.AutoSize = true;
-            this.booknamelabel.Location = new System.Drawing.Point(7, 60);
-            this.booknamelabel.Name = "booknamelabel";
-            this.booknamelabel.Size = new System.Drawing.Size(38, 13);
-            this.booknamelabel.TabIndex = 2;
-            this.booknamelabel.Text = "Name:";
+            this.userfirstnamelabel.AutoSize = true;
+            this.userfirstnamelabel.Location = new System.Drawing.Point(7, 60);
+            this.userfirstnamelabel.Name = "userfirstnamelabel";
+            this.userfirstnamelabel.Size = new System.Drawing.Size(60, 13);
+            this.userfirstnamelabel.TabIndex = 2;
+            this.userfirstnamelabel.Text = "First Name:";
             // 
             // borroweruseridtext
             // 
-            this.borroweruseridtext.Location = new System.Drawing.Point(81, 21);
+            this.borroweruseridtext.Location = new System.Drawing.Point(101, 21);
             this.borroweruseridtext.Name = "borroweruseridtext";
-            this.borroweruseridtext.Size = new System.Drawing.Size(137, 20);
+            this.borroweruseridtext.Size = new System.Drawing.Size(117, 20);
             this.borroweruseridtext.TabIndex = 1;
             // 
-            // bookid
+            // userID
             // 
-            this.bookid.AutoSize = true;
-            this.bookid.Location = new System.Drawing.Point(7, 28);
-            this.bookid.Name = "bookid";
-            this.bookid.Size = new System.Drawing.Size(46, 13);
-            this.bookid.TabIndex = 0;
-            this.bookid.Text = "User ID:";
+            this.userID.AutoSize = true;
+            this.userID.Location = new System.Drawing.Point(7, 28);
+            this.userID.Name = "userID";
+            this.userID.Size = new System.Drawing.Size(46, 13);
+            this.userID.TabIndex = 0;
+            this.userID.Text = "User ID:";
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.userlastnametextlabel);
             this.groupBox1.Controls.Add(this.searchbookbutton);
-            this.groupBox1.Controls.Add(this.borrowsearchusernametext);
+            this.groupBox1.Controls.Add(this.usersearchfirstname);
             this.groupBox1.Controls.Add(this.borrowsearchuseridtext);
-            this.groupBox1.Controls.Add(this.borrowerusernametextlabel);
+            this.groupBox1.Controls.Add(this.userfirstnametextlabel);
             this.groupBox1.Controls.Add(this.borroweruseridtextlabel);
             this.groupBox1.Location = new System.Drawing.Point(570, 74);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 111);
+            this.groupBox1.Size = new System.Drawing.Size(223, 135);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
             // searchbookbutton
             // 
-            this.searchbookbutton.Location = new System.Drawing.Point(147, 76);
+            this.searchbookbutton.Location = new System.Drawing.Point(147, 97);
             this.searchbookbutton.Name = "searchbookbutton";
             this.searchbookbutton.Size = new System.Drawing.Size(70, 24);
             this.searchbookbutton.TabIndex = 4;
@@ -191,12 +195,12 @@
             this.searchbookbutton.UseVisualStyleBackColor = true;
             this.searchbookbutton.Click += new System.EventHandler(this.searchbookbutton_Click);
             // 
-            // borrowsearchusernametext
+            // usersearchfirstname
             // 
-            this.borrowsearchusernametext.Location = new System.Drawing.Point(80, 44);
-            this.borrowsearchusernametext.Name = "borrowsearchusernametext";
-            this.borrowsearchusernametext.Size = new System.Drawing.Size(137, 20);
-            this.borrowsearchusernametext.TabIndex = 3;
+            this.usersearchfirstname.Location = new System.Drawing.Point(80, 44);
+            this.usersearchfirstname.Name = "usersearchfirstname";
+            this.usersearchfirstname.Size = new System.Drawing.Size(137, 20);
+            this.usersearchfirstname.TabIndex = 3;
             // 
             // borrowsearchuseridtext
             // 
@@ -205,14 +209,14 @@
             this.borrowsearchuseridtext.Size = new System.Drawing.Size(137, 20);
             this.borrowsearchuseridtext.TabIndex = 2;
             // 
-            // borrowerusernametextlabel
+            // userfirstnametextlabel
             // 
-            this.borrowerusernametextlabel.AutoSize = true;
-            this.borrowerusernametextlabel.Location = new System.Drawing.Point(8, 47);
-            this.borrowerusernametextlabel.Name = "borrowerusernametextlabel";
-            this.borrowerusernametextlabel.Size = new System.Drawing.Size(58, 13);
-            this.borrowerusernametextlabel.TabIndex = 1;
-            this.borrowerusernametextlabel.Text = "Username:";
+            this.userfirstnametextlabel.AutoSize = true;
+            this.userfirstnametextlabel.Location = new System.Drawing.Point(8, 47);
+            this.userfirstnametextlabel.Name = "userfirstnametextlabel";
+            this.userfirstnametextlabel.Size = new System.Drawing.Size(58, 13);
+            this.userfirstnametextlabel.TabIndex = 1;
+            this.userfirstnametextlabel.Text = "First name:";
             // 
             // borroweruseridtextlabel
             // 
@@ -246,14 +250,14 @@
             // borrowerToolStripMenuItem
             // 
             this.borrowerToolStripMenuItem.Name = "borrowerToolStripMenuItem";
-            this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.borrowerToolStripMenuItem.Text = "Home";
             this.borrowerToolStripMenuItem.Click += new System.EventHandler(this.borrowerToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.booksToolStripMenuItem.Text = "Books";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
@@ -263,6 +267,22 @@
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(79, 72);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(137, 20);
+            this.textBox1.TabIndex = 6;
+            // 
+            // userlastnametextlabel
+            // 
+            this.userlastnametextlabel.AutoSize = true;
+            this.userlastnametextlabel.Location = new System.Drawing.Point(7, 75);
+            this.userlastnametextlabel.Name = "userlastnametextlabel";
+            this.userlastnametextlabel.Size = new System.Drawing.Size(59, 13);
+            this.userlastnametextlabel.TabIndex = 5;
+            this.userlastnametextlabel.Text = "Last name:";
             // 
             // borrower
             // 
@@ -296,24 +316,26 @@
         private System.Windows.Forms.Button displayallborrowerbutton;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button addborrowerbutton;
-        private System.Windows.Forms.TextBox borrowerdatetext;
-        private System.Windows.Forms.Label bookyeartext;
-        private System.Windows.Forms.TextBox borrowerbookidtext;
-        private System.Windows.Forms.Label bookauthorlabel;
-        private System.Windows.Forms.TextBox borrowernametext;
-        private System.Windows.Forms.Label booknamelabel;
+        private System.Windows.Forms.TextBox usercontactnumbertext;
+        private System.Windows.Forms.Label contactnumbertext;
+        private System.Windows.Forms.TextBox userlastnametext;
+        private System.Windows.Forms.Label userlastnamelabel;
+        private System.Windows.Forms.TextBox userfirstnametext;
+        private System.Windows.Forms.Label userfirstnamelabel;
         private System.Windows.Forms.TextBox borroweruseridtext;
-        private System.Windows.Forms.Label bookid;
+        private System.Windows.Forms.Label userID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button searchbookbutton;
-        private System.Windows.Forms.TextBox borrowsearchusernametext;
+        private System.Windows.Forms.TextBox usersearchfirstname;
         private System.Windows.Forms.TextBox borrowsearchuseridtext;
-        private System.Windows.Forms.Label borrowerusernametextlabel;
+        private System.Windows.Forms.Label userfirstnametextlabel;
         private System.Windows.Forms.Label borroweruseridtextlabel;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label userlastnametextlabel;
     }
 }

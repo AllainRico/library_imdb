@@ -2,9 +2,9 @@ Sign Up
 	Check Unique /
 	Prompts /
 	Encryption Password /
-	Decrytion Function
+	Decrytion Function 
 	Add Record /
-	Update Record
+	Update Record /
 Log In	
 	Check - Correctness /
 	Message/Successful/Not /

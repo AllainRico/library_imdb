@@ -24,7 +24,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT [BorrowerID],[userID],[BorrowerName],[bookID],[borrowDate] FROM [dbo].[borrowersTable]", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM [dbo].[borrowersTable]", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -37,7 +37,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [dbo].[borrowersTable] where [userID] = '" + borrowsearchuseridtext.Text + "' OR [BorrowerName] = '" + borrowsearchusernametext.Text + "'", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [dbo].[borrowersTable] where [userID] = '" + borrowsearchuseridtext.Text + "' OR [FirstName] = '" + usersearchfirstname.Text + "'", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -47,9 +47,9 @@ namespace Login
         private void addborrowerbutton_Click(object sender, EventArgs e)
         {
             if (borroweruseridtext.Text == "" ||
-                borrowernametext.Text == "" ||
-                borrowerbookidtext.Text == "" ||
-                borrowerdatetext.Text == "")
+                userfirstnametext.Text == "" ||
+                userlastnametext.Text == "" ||
+                usercontactnumbertext.Text == "")
             {
                 MessageBox.Show("Invalid inputs!", "Error");
             }
@@ -59,10 +59,10 @@ namespace Login
                 con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowersTable] ([userID],[BorrowerName],[bookID],[borrowDate]) VALUES ('" + borroweruseridtext.Text + "','" + borrowernametext.Text + "','" + borrowerbookidtext.Text + "', '" + borrowerdatetext.Text +"');", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowersTable]([userID],[FirstName],[LastName],[ContactNumber]) VALUES ('" + borroweruseridtext.Text + "','" + userfirstnametext.Text + "','" + userlastnametext.Text + "', '" + usercontactnumbertext.Text +"');", con);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Book added successfully", "Success");
+                MessageBox.Show("Information added successfully", "Success");
             }
         }
 
