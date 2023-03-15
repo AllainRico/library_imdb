@@ -1,0 +1,22 @@
+/////create a borrower table
+
+CREATE TABLE borrowersTable (
+    BorrowerID int identity(1,1) NOT NULL,
+    userID int NOT NULL,
+    BorrowerName nvarchar(500) NOT NULL,
+	bookID smallint not null,
+	borrowDate datetime not null,
+    PRIMARY KEY (BorrowerID),
+	FOREIGN KEY (userID)
+    REFERENCES usersTable(userID),
+	FOREIGN KEY (bookID)
+    REFERENCES booksTable(bookID),
+);
+
+
+
+select * from borrowersTable;
+select * from usersTable;
+
+insert into usersTable(username, pass) values('admin','P@ssw0rd!');
+insert into borrowersTable(userID, BorrowerName) values(1, 'Librarian');
