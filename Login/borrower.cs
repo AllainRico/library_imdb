@@ -37,7 +37,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [dbo].[borrowersTable] where [userID] = '" + borrowsearchuseridtext.Text + "' OR [FirstName] = '" + usersearchfirstname.Text + "'", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [dbo].[borrowersTable] where [username] = '" + borrowusernametext.Text + "' OR [FirstName] = '" + usersearchfirstname.Text + "'", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -46,10 +46,10 @@ namespace Login
 
         private void addborrowerbutton_Click(object sender, EventArgs e)
         {
-            if (borroweruseridtext.Text == "" ||
-                userfirstnametext.Text == "" ||
-                userlastnametext.Text == "" ||
-                usercontactnumbertext.Text == "")
+            if (addborrowerusernametext.Text == "" ||
+                addborrowerfirstnametext.Text == "" ||
+                addborrowerlastnametext.Text == "" ||
+                addborrowercontactnumbertext.Text == "")
             {
                 MessageBox.Show("Invalid inputs!", "Error");
             }
@@ -59,10 +59,15 @@ namespace Login
                 con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowersTable]([userID],[FirstName],[LastName],[ContactNumber]) VALUES ('" + borroweruseridtext.Text + "','" + userfirstnametext.Text + "','" + userlastnametext.Text + "', '" + usercontactnumbertext.Text +"');", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowersTable]([userName],[FirstName],[LastName],[ContactNumber]) VALUES ('" + addborrowerusernametext.Text + "','" + addborrowerfirstnametext.Text + "','" + addborrowerlastnametext.Text + "', '" + addborrowercontactnumbertext.Text +"');", con);
                 cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Information added successfully", "Success");
+                addborrowerusernametext.Clear();
+                addborrowerfirstnametext.Clear();
+                addborrowerlastnametext.Clear();
+                addborrowercontactnumbertext.Clear();
+
             }
         }
 

@@ -66,9 +66,9 @@ namespace Login
                 {
                     MessageBox.Show("Welcome user");
                     userHome home = new userHome();
-                    Borrow form2 = new Borrow();
-                    form2.TextToPass = usernameTextBox.Text;
-                    form2.ShowDialog();
+                    //Borrow form2 = new Borrow();
+                    home.usernametext.Text = usernameTextBox.Text;
+                    home.Show();
                     Visible = false;
                 }
             }
