@@ -13,6 +13,7 @@ namespace Login
 {
     public partial class Borrow : Form
     {
+        public string TextToPass { get; set; }
         public Borrow()
         {
             InitializeComponent();
@@ -42,6 +43,9 @@ namespace Login
             sqlData.Fill(dtbl);
 
             booksgridview.DataSource = dtbl;
+
+            booknametext.Clear();
+            authortext.Clear();
         }
 
         private void booksgridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -65,7 +69,35 @@ namespace Login
 
         private void borrowbookbutton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("ok");
+            String username = TextToPass;
+            String msg1 = "Borrow this book under this username: "+ username + "?";
+            String msg2 = "Book ID: " + borrowbookidtext.Text+"";
+            String msg3 = "Book Name: " + borrowbooknametext.Text + "";
+            String msg4 = "Book Author: " + borrowbookauthortext.Text + "";
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(msg2 + "\n" + msg3 + "\n" + msg4 + "\n" + "\n" + msg1, "Borrow Book", buttons);
+            if (result == DialogResult.Yes)
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
+                con.Open();
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowTable] ([username] ,[bookID])VALUES ('" + username + "', "+ borrowbookidtext.Text + ");", con);
+                cmd.ExecuteNonQuery();
+
+                borrowbookidtext.Clear();
+                borrowbooknametext.Clear();
+                borrowbookauthortext.Clear();
+                MessageBox.Show("Book borrowed successfully", "Success");
+            }
+            else
+            {
+                MessageBox.Show("Borrow transaction canceled", "Notice");
+                borrowbookidtext.Clear();
+                borrowbooknametext.Clear();
+                borrowbookauthortext.Clear();
+            }
         }
     }
 }

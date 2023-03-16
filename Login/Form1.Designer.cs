@@ -31,11 +31,11 @@
             this.usernamelabel = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.forgotpasswordbutton = new System.Windows.Forms.Button();
             this.registerButton = new System.Windows.Forms.Button();
             this.loginbutton = new System.Windows.Forms.Button();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
-            this.forgotpasswordbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,22 @@
             this.groupBox1.Size = new System.Drawing.Size(232, 206);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
+            // 
+            // forgotpasswordbutton
+            // 
+            this.forgotpasswordbutton.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.forgotpasswordbutton.FlatAppearance.BorderSize = 0;
+            this.forgotpasswordbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.forgotpasswordbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.forgotpasswordbutton.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.forgotpasswordbutton.Location = new System.Drawing.Point(16, 169);
+            this.forgotpasswordbutton.Margin = new System.Windows.Forms.Padding(0);
+            this.forgotpasswordbutton.Name = "forgotpasswordbutton";
+            this.forgotpasswordbutton.Size = new System.Drawing.Size(202, 23);
+            this.forgotpasswordbutton.TabIndex = 6;
+            this.forgotpasswordbutton.Text = "Forgot Password";
+            this.forgotpasswordbutton.UseVisualStyleBackColor = false;
+            this.forgotpasswordbutton.Click += new System.EventHandler(this.forgotpasswordbutton_Click);
             // 
             // registerButton
             // 
@@ -113,22 +129,6 @@
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Password";
             // 
-            // forgotpasswordbutton
-            // 
-            this.forgotpasswordbutton.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.forgotpasswordbutton.FlatAppearance.BorderSize = 0;
-            this.forgotpasswordbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.forgotpasswordbutton.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.forgotpasswordbutton.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.forgotpasswordbutton.Location = new System.Drawing.Point(16, 169);
-            this.forgotpasswordbutton.Margin = new System.Windows.Forms.Padding(0);
-            this.forgotpasswordbutton.Name = "forgotpasswordbutton";
-            this.forgotpasswordbutton.Size = new System.Drawing.Size(202, 23);
-            this.forgotpasswordbutton.TabIndex = 6;
-            this.forgotpasswordbutton.Text = "Forgot Password";
-            this.forgotpasswordbutton.UseVisualStyleBackColor = false;
-            this.forgotpasswordbutton.Click += new System.EventHandler(this.forgotpasswordbutton_Click);
-            // 
             // loginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,13 +147,13 @@
         #endregion
 
         private System.Windows.Forms.Label usernamelabel;
-        private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button registerButton;
         private System.Windows.Forms.Button loginbutton;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Button forgotpasswordbutton;
+        public System.Windows.Forms.TextBox usernameTextBox;
     }
 }
 

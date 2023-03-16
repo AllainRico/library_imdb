@@ -15,6 +15,9 @@ namespace Login
 {
     public partial class loginForm : Form
     {
+        
+
+       
         public loginForm()
         {
             InitializeComponent();
@@ -47,6 +50,8 @@ namespace Login
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
+            
+
             if (dt.Rows.Count > 0)
             {
 
@@ -61,7 +66,9 @@ namespace Login
                 {
                     MessageBox.Show("Welcome user");
                     userHome home = new userHome();
-                    home.Show();
+                    Borrow form2 = new Borrow();
+                    form2.TextToPass = usernameTextBox.Text;
+                    form2.ShowDialog();
                     Visible = false;
                 }
             }
@@ -77,5 +84,7 @@ namespace Login
             signUp reg = new signUp();
             reg.Show();
         }
+         
     }
+
 }
