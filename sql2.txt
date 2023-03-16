@@ -1,0 +1,29 @@
+USE [libsysdb]
+GO
+
+UPDATE [dbo].[usersTable]
+   SET [pass] = 'oten'
+ WHERE [username] = 'allain'
+GO
+
+
+ALTER TABLE borrowersTable
+DROP COLUMN bookID;
+GO
+
+Drop table borrowersTable
+select * from usersTable
+select * from borrowersTable
+
+
+CREATE TABLE borrowersTable(
+	borrowerID int IDENTITY(1111,1) PRIMARY KEY,
+	userID int FOREIGN KEY REFERENCES usersTable(userID),
+    FirstName varchar(255),
+	LastName varchar(255),
+    ContactNumber varchar(255),
+	booksBorrowed smallint,
+	booksreturned smallint
+);
+
+CREATE TABLE 

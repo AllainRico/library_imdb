@@ -33,5 +33,16 @@ namespace Login.Properties {
                 return ((string)(this["booksdbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Securi" +
+            "ty=True")]
+        public string libsysdbConnectionString {
+            get {
+                return ((string)(this["libsysdbConnectionString"]));
+            }
+        }
     }
 }

@@ -54,11 +54,11 @@
             this.addbookidtext = new System.Windows.Forms.TextBox();
             this.bookid = new System.Windows.Forms.Label();
             this.booksdbDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSet)).BeginInit();
@@ -103,6 +103,7 @@
             this.groupBox1.Size = new System.Drawing.Size(223, 111);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // searchbookbutton
             // 
@@ -178,6 +179,7 @@
             this.groupBox2.Size = new System.Drawing.Size(223, 240);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // addbookbutton
             // 
@@ -291,17 +293,6 @@
             this.booksdbDataSetBindingSource1.DataSource = this.booksdbDataSet;
             this.booksdbDataSetBindingSource1.Position = 0;
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.reportToolStripMenuItem});
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
-            this.menuStrip2.TabIndex = 12;
-            this.menuStrip2.Text = "menuStrip2";
-            // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -314,14 +305,14 @@
             // borrowerToolStripMenuItem
             // 
             this.borrowerToolStripMenuItem.Name = "borrowerToolStripMenuItem";
-            this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.borrowerToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.borrowerToolStripMenuItem.Text = "Home";
             this.borrowerToolStripMenuItem.Click += new System.EventHandler(this.borrowerToolStripMenuItem_Click);
             // 
             // booksToolStripMenuItem
             // 
             this.booksToolStripMenuItem.Name = "booksToolStripMenuItem";
-            this.booksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.booksToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.booksToolStripMenuItem.Text = "Borrower";
             this.booksToolStripMenuItem.Click += new System.EventHandler(this.booksToolStripMenuItem_Click);
             // 
@@ -331,6 +322,18 @@
             this.reportToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.reportToolStripMenuItem});
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip2.TabIndex = 12;
+            this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // Books
             // 
@@ -388,10 +391,10 @@
         private System.Windows.Forms.Label bookyeartext;
         private System.Windows.Forms.TextBox addbookauthortext;
         private System.Windows.Forms.Label bookauthorlabel;
-        private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem borrowerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip2;
     }
 }
