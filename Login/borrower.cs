@@ -56,7 +56,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [dbo].[borrowersTable] where [username] = '" + usernamecombobox.Text + "' OR [FirstName] = '" + usersearchfirstname.Text + "'", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * from [dbo].[borrowersTable] where [username] = '" + usernamecombobox.Text + "' OR [FirstName] = '" + usersearchfirstname.Text + "' OR [LastName] = '" + usersearchlastname.Text + "'", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -84,14 +84,22 @@ namespace Login
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0) //checks if name is already taken
                 {
-                    SqlCommand cmd2 = new SqlCommand("INSERT INTO [dbo].[borrowersTable]([userName],[FirstName],[LastName],[ContactNumber]) VALUES ('" + usernamecombobox.Text + "','" + addborrowerfirstnametext.Text + "','" + addborrowerlastnametext.Text + "', '" + addborrowercontactnumbertext.Text + "');", con);
-                    cmd2.ExecuteNonQuery();
 
-                    MessageBox.Show("Information added successfully", "Success");
-                    usernamecombobox.Text = "";
-                    addborrowerfirstnametext.Clear();
-                    addborrowerlastnametext.Clear();
-                    addborrowercontactnumbertext.Clear();
+                    try
+                    {
+                        SqlCommand cmd2 = new SqlCommand("INSERT INTO [dbo].[borrowersTable]([userName],[FirstName],[LastName],[ContactNumber]) VALUES ('" + usernamecombobox.Text + "','" + addborrowerfirstnametext.Text + "','" + addborrowerlastnametext.Text + "', '" + addborrowercontactnumbertext.Text + "');", con);
+                        cmd2.ExecuteNonQuery();
+
+                        MessageBox.Show("Information added successfully", "Success");
+                        usernamecombobox.Text = "";
+                        addborrowerfirstnametext.Clear();
+                        addborrowerlastnametext.Clear();
+                        addborrowercontactnumbertext.Clear();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Username does not exist in the Database!", "Invalid User");
+                    }
                 }
                 else
                 {

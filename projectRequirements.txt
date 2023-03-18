@@ -15,13 +15,13 @@ Masterfiles
 	     Search /
 	     Add /
 	     Update /
-	     Status/Delete 
+	     Status/Delete /
 	Books
 	     View /
 	     Search /
 	     Add /
-	     Update 
-	     Status/Delete
+	     Update /
+	     Status/Delete /
 Transaction	
 	Conflict Avoidance
 	Borrow

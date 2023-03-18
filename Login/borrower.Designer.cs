@@ -31,6 +31,7 @@
             this.borrowergridview = new System.Windows.Forms.DataGridView();
             this.displayallborrowerbutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.usernamecombobox = new System.Windows.Forms.ComboBox();
             this.addborrowerbutton = new System.Windows.Forms.Button();
             this.addborrowercontactnumbertext = new System.Windows.Forms.TextBox();
             this.contactnumbertext = new System.Windows.Forms.Label();
@@ -40,7 +41,7 @@
             this.userfirstnamelabel = new System.Windows.Forms.Label();
             this.userID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.usersearchlastname = new System.Windows.Forms.TextBox();
             this.userlastnametextlabel = new System.Windows.Forms.Label();
             this.searchbookbutton = new System.Windows.Forms.Button();
             this.usersearchfirstname = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.borrowerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usernamecombobox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.borrowergridview)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -95,6 +95,14 @@
             this.groupBox2.Size = new System.Drawing.Size(223, 179);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            // 
+            // usernamecombobox
+            // 
+            this.usernamecombobox.FormattingEnabled = true;
+            this.usernamecombobox.Location = new System.Drawing.Point(100, 19);
+            this.usernamecombobox.Name = "usernamecombobox";
+            this.usernamecombobox.Size = new System.Drawing.Size(118, 21);
+            this.usernamecombobox.TabIndex = 12;
             // 
             // addborrowerbutton
             // 
@@ -165,7 +173,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.usersearchlastname);
             this.groupBox1.Controls.Add(this.userlastnametextlabel);
             this.groupBox1.Controls.Add(this.searchbookbutton);
             this.groupBox1.Controls.Add(this.usersearchfirstname);
@@ -178,12 +186,12 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // usersearchlastname
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 72);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 6;
+            this.usersearchlastname.Location = new System.Drawing.Point(79, 72);
+            this.usersearchlastname.Name = "usersearchlastname";
+            this.usersearchlastname.Size = new System.Drawing.Size(137, 20);
+            this.usersearchlastname.TabIndex = 6;
             // 
             // userlastnametextlabel
             // 
@@ -277,14 +285,6 @@
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
-            // usernamecombobox
-            // 
-            this.usernamecombobox.FormattingEnabled = true;
-            this.usernamecombobox.Location = new System.Drawing.Point(100, 19);
-            this.usernamecombobox.Name = "usernamecombobox";
-            this.usernamecombobox.Size = new System.Drawing.Size(118, 21);
-            this.usernamecombobox.TabIndex = 12;
-            // 
             // borrower
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -335,7 +335,7 @@
         private System.Windows.Forms.ToolStripMenuItem borrowerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox usersearchlastname;
         private System.Windows.Forms.Label userlastnametextlabel;
         private System.Windows.Forms.ComboBox usernamecombobox;
     }

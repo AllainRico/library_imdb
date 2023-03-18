@@ -72,9 +72,23 @@ namespace Login
                 sda.Fill(dt);
                 if (dt.Rows.Count == 0) //checks if name is already taken
                 {
-                    SqlCommand cmd2 = new SqlCommand("INSERT INTO [dbo].[booksTable] ([BookID],[Name],[Author],[Year],[Genre],[Quantity]) VALUES ('" + addbookidtext.Text + "','" + addbooknametext.Text + "','" + addbookauthortext.Text + "', '" + addyeartext.Text + "', '" + addbookgenretext.Text + "', '" + addbookquantitytext.Text + "');", con);
-                    cmd2.ExecuteNonQuery();
-                    MessageBox.Show("Book added successfully", "Success");
+                    try
+                    {
+                        SqlCommand cmd2 = new SqlCommand("INSERT INTO [dbo].[booksTable] ([BookID],[Name],[Author],[Year],[Genre],[Quantity]) VALUES ('" + addbookidtext.Text + "','" + addbooknametext.Text + "','" + addbookauthortext.Text + "', '" + addyeartext.Text + "', '" + addbookgenretext.Text + "', '" + addbookquantitytext.Text + "');", con);
+                        cmd2.ExecuteNonQuery();
+                        MessageBox.Show("Book added successfully", "Success");
+                        addbookauthortext.Clear();
+                        addbookidtext.Clear();
+                        addbooknametext.Clear();
+                        addyeartext.Clear();
+                        addbookgenretext.Clear();
+                        addbookquantitytext.Clear();
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Book ID is too long!","Book ID Naming error");
+                    }
+                    
                 }
                 else
                 {
