@@ -32,8 +32,7 @@
             this.booksgridview = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gouserhome = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.borrowbookbutton = new System.Windows.Forms.Button();
             this.borrowbookauthortext = new System.Windows.Forms.TextBox();
@@ -87,23 +86,17 @@
             // transactionToolStripMenuItem
             // 
             this.transactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borrowToolStripMenuItem,
-            this.returnToolStripMenuItem});
+            this.gouserhome});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
             this.transactionToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.transactionToolStripMenuItem.Text = "Transaction";
             // 
-            // borrowToolStripMenuItem
+            // gouserhome
             // 
-            this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.borrowToolStripMenuItem.Text = "Home";
-            // 
-            // returnToolStripMenuItem
-            // 
-            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
-            this.returnToolStripMenuItem.Text = "Return";
+            this.gouserhome.Name = "gouserhome";
+            this.gouserhome.Size = new System.Drawing.Size(180, 22);
+            this.gouserhome.Text = "Home";
+            this.gouserhome.Click += new System.EventHandler(this.gouserhome_Click);
             // 
             // groupBox2
             // 
@@ -294,8 +287,7 @@
         private System.Windows.Forms.DataGridView booksgridview;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem borrowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gouserhome;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button borrowbookbutton;
         private System.Windows.Forms.TextBox borrowbookauthortext;

@@ -8,12 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Login
 {
     public partial class Borrow : Form
     {
-        public string TextToPass { get; set; }
+        private string usernameni;
+
+        
+        public string TextToPass { get; set; } //gets the inputted username text from login form
+
         public Borrow()
         {
             InitializeComponent();
@@ -86,6 +91,10 @@ namespace Login
 
                 SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowTable] ([username] ,[bookID])VALUES ('" + username + "', "+ borrowbookidtext.Text + ");", con);
                 cmd.ExecuteNonQuery();
+                SqlCommand updateQuantity = new SqlCommand("UPDATE booksTable SET Quantity = Quantity - 1 WHERE BookID = "+ borrowbookidtext.Text + ";", con);
+                updateQuantity.ExecuteNonQuery();
+                SqlCommand updateBooksBorrowed = new SqlCommand("UPDATE borrowersTable SET booksBorrowed = ISNULL(booksborrowed, 0) + 1 where username = '" + TextToPass + "';", con);
+                updateBooksBorrowed.ExecuteNonQuery();
 
                 borrowbookidtext.Clear();
                 borrowbooknametext.Clear();
@@ -99,6 +108,23 @@ namespace Login
                 borrowbooknametext.Clear();
                 borrowbookauthortext.Clear();
             }
+        }
+
+        private void gouserhome_Click(object sender, EventArgs e)
+        {
+            userHome uh = new userHome();
+            uh.usernametext.Text = TextToPass;
+            //uh.TextToPass = usernameni;
+            uh.Show();
+            Visible = false;
+        }
+
+        private void returnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Return balik = new Return();
+            balik.Show();
+            balik.TextToPass = TextToPass;
+            Visible = false;
         }
     }
 }

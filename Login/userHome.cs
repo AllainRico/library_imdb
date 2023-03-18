@@ -15,16 +15,17 @@ namespace Login
     public partial class userHome : Form
     {
         public string TextToPass { get; set; }
-        public String username {
-            get 
+        public String username
+        {
+            get
             {
-               return usernametext.Text;
+                return usernametext.Text;
             }
         }
         public userHome()
         {
             InitializeComponent();
-           
+
         }
 
 
@@ -33,15 +34,15 @@ namespace Login
 
             Borrow borrow = new Borrow();
             borrow.Show();
-            Visible= false;
+            Visible = false;
         }
 
         private void returnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Return balik= new Return();
+            Return balik = new Return();
             balik.Show();
             balik.TextToPass = username;
-            Visible= false;
+            Visible = false;
         }
 
         private void borrowbutton_Click(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace Login
 
         private void borrowerIDtext_TextChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -117,8 +118,8 @@ namespace Login
             booksborrowedtext.ReadOnly = true;
             booksborrowedtext.Enabled = false;
             booksreturnedtext.ReadOnly = true;
-            booksreturnedtext.Enabled = false;    
-                        
+            booksreturnedtext.Enabled = false;
+
         }
 
         private void returnbookbutton_Click(object sender, EventArgs e)

@@ -51,5 +51,45 @@ namespace Login
 
             borrowgridview.DataSource = dtbl;
         }
+
+        private void goHome_Click(object sender, EventArgs e)
+        {
+            userHome uh = new userHome();
+            uh.usernametext.Text = TextToPass;
+            //uh.TextToPass = usernameni;
+            uh.Show();
+            Visible = false;
+        }
+
+        private void goBorrow_Click(object sender, EventArgs e)
+        {
+            Borrow borrow = new Borrow();
+            borrow.Show();
+            Visible = false;
+        }
+
+        private void returnbookbutton_Click(object sender, EventArgs e)
+        {
+            String username = TextToPass;
+            String msg1 = "Return this book under this username: " + username + "?";
+            String msg2 = "Book ID: " + returnbookidtext.Text + "";
+            String msg3 = "Book Name: " + returnbooknametext.Text + "";
+            String msg4 = "Book Author: " + returnbookauthortext.Text + "";
+
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(msg2 + "\n" + msg3 + "\n" + msg4 + "\n" + "\n" + msg1, "Return Book", buttons);
+            if (result == DialogResult.Yes)
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
+                con.Open();
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[returnTable] ([username] ,[bookID])VALUES ('" + username + "', " + returnbookidtext.Text + ");", con);
+                cmd.ExecuteNonQuery();
+                SqlCommand updateQuantity = new SqlCommand("UPDATE booksTable SET Quantity = Quantity + 1 WHERE BookID = " + returnbookidtext.Text + ";", con);
+                updateQuantity.ExecuteNonQuery();
+                SqlCommand updateBooksReturned = new SqlCommand("UPDATE borrowersTable SET booksReturned = ISNULL(booksReturned, 0) + 1 where username = '" + TextToPass + "';", con);
+                updateBooksReturned.ExecuteNonQuery();
+            }
+        }
     }
 }

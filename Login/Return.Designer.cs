@@ -45,8 +45,7 @@
             this.searchbooknamelabel = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goHome = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowgridview = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -77,6 +76,7 @@
             this.returnbookbutton.TabIndex = 12;
             this.returnbookbutton.Text = "Return";
             this.returnbookbutton.UseVisualStyleBackColor = true;
+            this.returnbookbutton.Click += new System.EventHandler(this.returnbookbutton_Click);
             // 
             // returnbookauthortext
             // 
@@ -208,23 +208,17 @@
             // transactionToolStripMenuItem
             // 
             this.transactionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.borrowToolStripMenuItem,
-            this.returnToolStripMenuItem});
+            this.goHome});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
             this.transactionToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.transactionToolStripMenuItem.Text = "Transaction";
             // 
-            // borrowToolStripMenuItem
+            // goHome
             // 
-            this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.borrowToolStripMenuItem.Text = "Home";
-            // 
-            // returnToolStripMenuItem
-            // 
-            this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.returnToolStripMenuItem.Text = "Borrow";
+            this.goHome.Name = "goHome";
+            this.goHome.Size = new System.Drawing.Size(180, 22);
+            this.goHome.Text = "Home";
+            this.goHome.Click += new System.EventHandler(this.goHome_Click);
             // 
             // borrowgridview
             // 
@@ -285,8 +279,7 @@
         private System.Windows.Forms.Label searchbooknamelabel;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem borrowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goHome;
         private System.Windows.Forms.DataGridView borrowgridview;
     }
 }

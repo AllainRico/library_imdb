@@ -15,9 +15,9 @@ namespace Login
 {
     public partial class loginForm : Form
     {
-        
 
-       
+
+
         public loginForm()
         {
             InitializeComponent();
@@ -42,7 +42,7 @@ namespace Login
             SqlConnection con = new SqlConnection();
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             //change this shit kay ma error ni bai
-            
+
             con.Open();
             string encpass = Aescryp.Encrypt(passwordTextBox.Text);
             SqlCommand cmd = new SqlCommand("select * from usersTable where username='" + usernameTextBox.Text + "' and pass = '" + encpass + "'", con);
@@ -50,7 +50,7 @@ namespace Login
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            
+
 
             if (dt.Rows.Count > 0)
             {
@@ -84,7 +84,7 @@ namespace Login
             signUp reg = new signUp();
             reg.Show();
         }
-         
+
     }
 
 }
