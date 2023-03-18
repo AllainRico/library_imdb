@@ -22,7 +22,15 @@ namespace Login
 
         private void Return_Load(object sender, EventArgs e)
         {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
+            con.Open();
 
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "' AND isReturned = 0;", con);
+            DataTable dtbl = new DataTable();
+            sqlData.Fill(dtbl);
+
+            borrowgridview.DataSource = dtbl;
         }
 
         private void borrowgridview_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -45,7 +53,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "';", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "' AND isReturned = 0;", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -86,13 +94,29 @@ namespace Login
                 con.Open();
                 SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[returnTable] ([username] ,[bookID])VALUES ('" + username + "', " + returnbookidtext.Text + ");", con);
                 cmd.ExecuteNonQuery();
-                SqlCommand deleteBorrow = new SqlCommand("DELETE FROM borrowTable where transactionNumber = " + returntransactionid.Text + ";", con);
+                SqlCommand deleteBorrow = new SqlCommand("UPDATE borrowTable SET isReturned = isReturned + 1 WHERE BookID = " + returnbookidtext.Text + ";", con);
                 deleteBorrow.ExecuteNonQuery();
                 SqlCommand updateQuantity = new SqlCommand("UPDATE booksTable SET Quantity = Quantity + 1 WHERE BookID = " + returnbookidtext.Text + ";", con);
                 updateQuantity.ExecuteNonQuery();
                 SqlCommand updateBooksReturned = new SqlCommand("UPDATE borrowersTable SET booksReturned = ISNULL(booksReturned, 0) + 1 where username = '" + TextToPass + "';", con);
                 updateBooksReturned.ExecuteNonQuery();
-                
+
+                MessageBox.Show("Thank you for borrowing our book!");
+
+                returntransactionid.Clear();
+                returnbookidtext.Clear();
+                returnbooknametext.Clear();
+                returnbookauthortext.Clear();
+                displayallborrowbutton_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Borrow transaction canceled", "Notice");
+                returntransactionid.Clear();
+                returnbookidtext.Clear();
+                returnbooknametext.Clear();
+                returnbookauthortext.Clear();
+                displayallborrowbutton_Click(sender, e);
             }
         }
     }

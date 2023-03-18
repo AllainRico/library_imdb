@@ -49,7 +49,7 @@ namespace Login
         {
             Borrow borrow = new Borrow();
             borrow.TextToPass = username;
-            borrow.ShowDialog();
+            borrow.Show();
             Visible = false;
         }
 

@@ -83,6 +83,7 @@ namespace Login
                         addyeartext.Clear();
                         addbookgenretext.Clear();
                         addbookquantitytext.Clear();
+                        displayallbutton_Click(sender,e);
                     }
                     catch (Exception)
                     {
@@ -108,6 +109,7 @@ namespace Login
                         addyeartext.Clear();
                         addbookgenretext.Clear();
                         addbookquantitytext.Clear();
+                        displayallbutton_Click(sender, e);
                     }
                 }
 

@@ -25,9 +25,11 @@ Masterfiles
 Transaction	
 	Conflict Avoidance
 	Borrow
-	     Decrease Inventory
+	     Decrease Inventory /
+	     Increase borrowedBooks (mine only) /
 	Return
-	     Increase Inventory
+	     Increase Inventory /
+	     Increase returnedBooks(mine only) /
 Reports	
 	Simple/Graphical
 	Date Filter

@@ -95,6 +95,7 @@ namespace Login
                         addborrowerfirstnametext.Clear();
                         addborrowerlastnametext.Clear();
                         addborrowercontactnumbertext.Clear();
+                        displayallborrowerbutton_Click(sender, e);
                     }
                     catch (Exception)
                     {
@@ -117,6 +118,7 @@ namespace Login
                         addborrowerfirstnametext.Clear();
                         addborrowerlastnametext.Clear();
                         addborrowercontactnumbertext.Clear();
+                        displayallborrowerbutton_Click(sender, e);
                     }
                 }   
 

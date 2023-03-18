@@ -100,6 +100,7 @@ namespace Login
                 borrowbooknametext.Clear();
                 borrowbookauthortext.Clear();
                 MessageBox.Show("Book borrowed successfully", "Success");
+                displayallbooksbutton_Click(sender, e);
             }
             else
             {
@@ -107,6 +108,7 @@ namespace Login
                 borrowbookidtext.Clear();
                 borrowbooknametext.Clear();
                 borrowbookauthortext.Clear();
+                displayallbooksbutton_Click(sender, e);
             }
         }
 
