@@ -66,10 +66,40 @@ namespace Login
                 con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[booksTable] ([BookID],[Name],[Author],[Year],[Genre],[Quantity]) VALUES ('" + addbookidtext.Text + "','" + addbooknametext.Text + "','" + addbookauthortext.Text + "', '" + addyeartext.Text + "', '" + addbookgenretext.Text + "', '" + addbookquantitytext.Text + "');", con);
-                cmd.ExecuteNonQuery();
+                SqlCommand cmd = new SqlCommand("select * from booksTable where bookID= " + addbookidtext.Text + "", con);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                if (dt.Rows.Count == 0) //checks if name is already taken
+                {
+                    SqlCommand cmd2 = new SqlCommand("INSERT INTO [dbo].[booksTable] ([BookID],[Name],[Author],[Year],[Genre],[Quantity]) VALUES ('" + addbookidtext.Text + "','" + addbooknametext.Text + "','" + addbookauthortext.Text + "', '" + addyeartext.Text + "', '" + addbookgenretext.Text + "', '" + addbookquantitytext.Text + "');", con);
+                    cmd2.ExecuteNonQuery();
+                    MessageBox.Show("Book added successfully", "Success");
+                }
+                else
+                {
+                    string message = "Are you sure you want to update credentials for this book?";
+                    string title = "Change Book Detail Attempt";
+                    MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, title, buttons);
+                    if (result == DialogResult.Yes)
+                    {
 
-                MessageBox.Show("Book added successfully", "Success");
+                        SqlCommand cmd3 = new SqlCommand("UPDATE [dbo].[booksTable] SET [Name] = '" + addbooknametext.Text + "', [Author] = '" + addbookauthortext.Text + "', [Year] = " + addyeartext.Text + ", [Genre] = '" + addbookgenretext.Text + "', [Quantity] = " + addbookquantitytext.Text + " WHERE [BookID] = " + addbookidtext.Text + ";", con);
+                        cmd3.ExecuteNonQuery();
+                        MessageBox.Show("Credentials successfully updated!", "Success");
+                        addbookidtext.Clear();
+                        addbooknametext.Clear();
+                        addbookauthortext.Clear();
+                        addyeartext.Clear();
+                        addbookgenretext.Clear();
+                        addbookquantitytext.Clear();
+                    }
+                }
+
+                    
+
+                
             }
             
 

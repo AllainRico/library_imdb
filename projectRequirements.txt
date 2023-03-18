@@ -14,8 +14,8 @@ Masterfiles
 	     View /
 	     Search /
 	     Add /
-	     Update
-	     Status/Delete
+	     Update /
+	     Status/Delete 
 	Books
 	     View /
 	     Search /

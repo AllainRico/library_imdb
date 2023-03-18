@@ -40,6 +40,7 @@ namespace Login
         {
             Return balik= new Return();
             balik.Show();
+            balik.TextToPass = username;
             Visible= false;
         }
 
@@ -118,6 +119,14 @@ namespace Login
             booksreturnedtext.ReadOnly = true;
             booksreturnedtext.Enabled = false;    
                         
+        }
+
+        private void returnbookbutton_Click(object sender, EventArgs e)
+        {
+            Return balik = new Return();
+            balik.TextToPass = username;
+            balik.Show();
+            Visible = false;
         }
     }
 }

@@ -38,7 +38,6 @@
             this.userlastnamelabel = new System.Windows.Forms.Label();
             this.addborrowerfirstnametext = new System.Windows.Forms.TextBox();
             this.userfirstnamelabel = new System.Windows.Forms.Label();
-            this.addborrowerusernametext = new System.Windows.Forms.TextBox();
             this.userID = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -53,6 +52,7 @@
             this.borrowerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usernamecombobox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.borrowergridview)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -81,6 +81,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.usernamecombobox);
             this.groupBox2.Controls.Add(this.addborrowerbutton);
             this.groupBox2.Controls.Add(this.addborrowercontactnumbertext);
             this.groupBox2.Controls.Add(this.contactnumbertext);
@@ -88,7 +89,6 @@
             this.groupBox2.Controls.Add(this.userlastnamelabel);
             this.groupBox2.Controls.Add(this.addborrowerfirstnametext);
             this.groupBox2.Controls.Add(this.userfirstnamelabel);
-            this.groupBox2.Controls.Add(this.addborrowerusernametext);
             this.groupBox2.Controls.Add(this.userID);
             this.groupBox2.Location = new System.Drawing.Point(570, 228);
             this.groupBox2.Name = "groupBox2";
@@ -153,13 +153,6 @@
             this.userfirstnamelabel.Size = new System.Drawing.Size(60, 13);
             this.userfirstnamelabel.TabIndex = 2;
             this.userfirstnamelabel.Text = "First Name:";
-            // 
-            // addborrowerusernametext
-            // 
-            this.addborrowerusernametext.Location = new System.Drawing.Point(101, 21);
-            this.addborrowerusernametext.Name = "addborrowerusernametext";
-            this.addborrowerusernametext.Size = new System.Drawing.Size(117, 20);
-            this.addborrowerusernametext.TabIndex = 1;
             // 
             // userID
             // 
@@ -284,6 +277,14 @@
             this.reportToolStripMenuItem.Text = "Report";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
+            // usernamecombobox
+            // 
+            this.usernamecombobox.FormattingEnabled = true;
+            this.usernamecombobox.Location = new System.Drawing.Point(100, 19);
+            this.usernamecombobox.Name = "usernamecombobox";
+            this.usernamecombobox.Size = new System.Drawing.Size(118, 21);
+            this.usernamecombobox.TabIndex = 12;
+            // 
             // borrower
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,7 +323,6 @@
         private System.Windows.Forms.Label userlastnamelabel;
         private System.Windows.Forms.TextBox addborrowerfirstnametext;
         private System.Windows.Forms.Label userfirstnamelabel;
-        private System.Windows.Forms.TextBox addborrowerusernametext;
         private System.Windows.Forms.Label userID;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button searchbookbutton;
@@ -337,5 +337,6 @@
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label userlastnametextlabel;
+        private System.Windows.Forms.ComboBox usernamecombobox;
     }
 }

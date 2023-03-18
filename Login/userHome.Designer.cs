@@ -258,6 +258,7 @@
             this.returnbookbutton.TabIndex = 4;
             this.returnbookbutton.Text = "Return book";
             this.returnbookbutton.UseVisualStyleBackColor = false;
+            this.returnbookbutton.Click += new System.EventHandler(this.returnbookbutton_Click);
             // 
             // userHome
             // 
