@@ -47,6 +47,8 @@
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goHome = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowgridview = new System.Windows.Forms.DataGridView();
+            this.returntransactionid = new System.Windows.Forms.TextBox();
+            this.transactionlabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -55,6 +57,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.returntransactionid);
+            this.groupBox2.Controls.Add(this.transactionlabel);
             this.groupBox2.Controls.Add(this.returnbookbutton);
             this.groupBox2.Controls.Add(this.returnbookauthortext);
             this.groupBox2.Controls.Add(this.bookauthorlabel);
@@ -64,13 +68,13 @@
             this.groupBox2.Controls.Add(this.returnbookidlabel);
             this.groupBox2.Location = new System.Drawing.Point(570, 202);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(223, 154);
+            this.groupBox2.Size = new System.Drawing.Size(223, 188);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             // 
             // returnbookbutton
             // 
-            this.returnbookbutton.Location = new System.Drawing.Point(147, 114);
+            this.returnbookbutton.Location = new System.Drawing.Point(147, 142);
             this.returnbookbutton.Name = "returnbookbutton";
             this.returnbookbutton.Size = new System.Drawing.Size(70, 23);
             this.returnbookbutton.TabIndex = 12;
@@ -80,7 +84,7 @@
             // 
             // returnbookauthortext
             // 
-            this.returnbookauthortext.Location = new System.Drawing.Point(80, 86);
+            this.returnbookauthortext.Location = new System.Drawing.Point(80, 114);
             this.returnbookauthortext.Name = "returnbookauthortext";
             this.returnbookauthortext.ReadOnly = true;
             this.returnbookauthortext.Size = new System.Drawing.Size(137, 20);
@@ -89,7 +93,7 @@
             // bookauthorlabel
             // 
             this.bookauthorlabel.AutoSize = true;
-            this.bookauthorlabel.Location = new System.Drawing.Point(7, 89);
+            this.bookauthorlabel.Location = new System.Drawing.Point(7, 117);
             this.bookauthorlabel.Name = "bookauthorlabel";
             this.bookauthorlabel.Size = new System.Drawing.Size(69, 13);
             this.bookauthorlabel.TabIndex = 4;
@@ -97,7 +101,7 @@
             // 
             // returnbooknametext
             // 
-            this.returnbooknametext.Location = new System.Drawing.Point(80, 53);
+            this.returnbooknametext.Location = new System.Drawing.Point(80, 81);
             this.returnbooknametext.Name = "returnbooknametext";
             this.returnbooknametext.ReadOnly = true;
             this.returnbooknametext.Size = new System.Drawing.Size(137, 20);
@@ -106,7 +110,7 @@
             // booknamelabel
             // 
             this.booknamelabel.AutoSize = true;
-            this.booknamelabel.Location = new System.Drawing.Point(7, 60);
+            this.booknamelabel.Location = new System.Drawing.Point(7, 88);
             this.booknamelabel.Name = "booknamelabel";
             this.booknamelabel.Size = new System.Drawing.Size(66, 13);
             this.booknamelabel.TabIndex = 2;
@@ -114,7 +118,7 @@
             // 
             // returnbookidtext
             // 
-            this.returnbookidtext.Location = new System.Drawing.Point(81, 21);
+            this.returnbookidtext.Location = new System.Drawing.Point(81, 49);
             this.returnbookidtext.Name = "returnbookidtext";
             this.returnbookidtext.ReadOnly = true;
             this.returnbookidtext.Size = new System.Drawing.Size(137, 20);
@@ -123,7 +127,7 @@
             // returnbookidlabel
             // 
             this.returnbookidlabel.AutoSize = true;
-            this.returnbookidlabel.Location = new System.Drawing.Point(7, 28);
+            this.returnbookidlabel.Location = new System.Drawing.Point(7, 56);
             this.returnbookidlabel.Name = "returnbookidlabel";
             this.returnbookidlabel.Size = new System.Drawing.Size(49, 13);
             this.returnbookidlabel.TabIndex = 0;
@@ -216,7 +220,7 @@
             // goHome
             // 
             this.goHome.Name = "goHome";
-            this.goHome.Size = new System.Drawing.Size(180, 22);
+            this.goHome.Size = new System.Drawing.Size(107, 22);
             this.goHome.Text = "Home";
             this.goHome.Click += new System.EventHandler(this.goHome_Click);
             // 
@@ -233,6 +237,23 @@
             this.borrowgridview.Size = new System.Drawing.Size(552, 421);
             this.borrowgridview.TabIndex = 18;
             this.borrowgridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.borrowgridview_CellContentClick);
+            // 
+            // returntransactionid
+            // 
+            this.returntransactionid.Location = new System.Drawing.Point(81, 16);
+            this.returntransactionid.Name = "returntransactionid";
+            this.returntransactionid.ReadOnly = true;
+            this.returntransactionid.Size = new System.Drawing.Size(137, 20);
+            this.returntransactionid.TabIndex = 14;
+            // 
+            // transactionlabel
+            // 
+            this.transactionlabel.AutoSize = true;
+            this.transactionlabel.Location = new System.Drawing.Point(7, 23);
+            this.transactionlabel.Name = "transactionlabel";
+            this.transactionlabel.Size = new System.Drawing.Size(49, 13);
+            this.transactionlabel.TabIndex = 13;
+            this.transactionlabel.Text = "Book ID:";
             // 
             // Return
             // 
@@ -281,5 +302,7 @@
         private System.Windows.Forms.ToolStripMenuItem transactionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem goHome;
         private System.Windows.Forms.DataGridView borrowgridview;
+        private System.Windows.Forms.TextBox returntransactionid;
+        private System.Windows.Forms.Label transactionlabel;
     }
 }
