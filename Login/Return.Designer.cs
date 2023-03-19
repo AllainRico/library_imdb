@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.returntransactionid = new System.Windows.Forms.TextBox();
+            this.transactionlabel = new System.Windows.Forms.Label();
             this.returnbookbutton = new System.Windows.Forms.Button();
             this.returnbookauthortext = new System.Windows.Forms.TextBox();
             this.bookauthorlabel = new System.Windows.Forms.Label();
@@ -47,12 +49,12 @@
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goHome = new System.Windows.Forms.ToolStripMenuItem();
             this.borrowgridview = new System.Windows.Forms.DataGridView();
-            this.returntransactionid = new System.Windows.Forms.TextBox();
-            this.transactionlabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.borrowgridview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -66,17 +68,38 @@
             this.groupBox2.Controls.Add(this.booknamelabel);
             this.groupBox2.Controls.Add(this.returnbookidtext);
             this.groupBox2.Controls.Add(this.returnbookidlabel);
-            this.groupBox2.Location = new System.Drawing.Point(570, 202);
+            this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9F);
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.groupBox2.Location = new System.Drawing.Point(656, 275);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(223, 188);
+            this.groupBox2.Size = new System.Drawing.Size(250, 205);
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             // 
+            // returntransactionid
+            // 
+            this.returntransactionid.BackColor = System.Drawing.Color.White;
+            this.returntransactionid.Location = new System.Drawing.Point(81, 28);
+            this.returntransactionid.Name = "returntransactionid";
+            this.returntransactionid.ReadOnly = true;
+            this.returntransactionid.Size = new System.Drawing.Size(153, 21);
+            this.returntransactionid.TabIndex = 14;
+            // 
+            // transactionlabel
+            // 
+            this.transactionlabel.AutoSize = true;
+            this.transactionlabel.Location = new System.Drawing.Point(7, 35);
+            this.transactionlabel.Name = "transactionlabel";
+            this.transactionlabel.Size = new System.Drawing.Size(52, 13);
+            this.transactionlabel.TabIndex = 13;
+            this.transactionlabel.Text = "Book ID:";
+            // 
             // returnbookbutton
             // 
-            this.returnbookbutton.Location = new System.Drawing.Point(147, 142);
+            this.returnbookbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.returnbookbutton.Location = new System.Drawing.Point(147, 154);
             this.returnbookbutton.Name = "returnbookbutton";
-            this.returnbookbutton.Size = new System.Drawing.Size(70, 23);
+            this.returnbookbutton.Size = new System.Drawing.Size(86, 23);
             this.returnbookbutton.TabIndex = 12;
             this.returnbookbutton.Text = "Return";
             this.returnbookbutton.UseVisualStyleBackColor = true;
@@ -84,64 +107,70 @@
             // 
             // returnbookauthortext
             // 
-            this.returnbookauthortext.Location = new System.Drawing.Point(80, 114);
+            this.returnbookauthortext.BackColor = System.Drawing.Color.White;
+            this.returnbookauthortext.Location = new System.Drawing.Point(80, 126);
             this.returnbookauthortext.Name = "returnbookauthortext";
             this.returnbookauthortext.ReadOnly = true;
-            this.returnbookauthortext.Size = new System.Drawing.Size(137, 20);
+            this.returnbookauthortext.Size = new System.Drawing.Size(153, 21);
             this.returnbookauthortext.TabIndex = 5;
             // 
             // bookauthorlabel
             // 
             this.bookauthorlabel.AutoSize = true;
-            this.bookauthorlabel.Location = new System.Drawing.Point(7, 117);
+            this.bookauthorlabel.Location = new System.Drawing.Point(7, 129);
             this.bookauthorlabel.Name = "bookauthorlabel";
-            this.bookauthorlabel.Size = new System.Drawing.Size(69, 13);
+            this.bookauthorlabel.Size = new System.Drawing.Size(73, 13);
             this.bookauthorlabel.TabIndex = 4;
             this.bookauthorlabel.Text = "Book Author:";
             // 
             // returnbooknametext
             // 
-            this.returnbooknametext.Location = new System.Drawing.Point(80, 81);
+            this.returnbooknametext.BackColor = System.Drawing.Color.White;
+            this.returnbooknametext.Location = new System.Drawing.Point(80, 93);
             this.returnbooknametext.Name = "returnbooknametext";
             this.returnbooknametext.ReadOnly = true;
-            this.returnbooknametext.Size = new System.Drawing.Size(137, 20);
+            this.returnbooknametext.Size = new System.Drawing.Size(153, 21);
             this.returnbooknametext.TabIndex = 3;
             // 
             // booknamelabel
             // 
             this.booknamelabel.AutoSize = true;
-            this.booknamelabel.Location = new System.Drawing.Point(7, 88);
+            this.booknamelabel.Location = new System.Drawing.Point(7, 100);
             this.booknamelabel.Name = "booknamelabel";
-            this.booknamelabel.Size = new System.Drawing.Size(66, 13);
+            this.booknamelabel.Size = new System.Drawing.Size(67, 13);
             this.booknamelabel.TabIndex = 2;
             this.booknamelabel.Text = "Book Name:";
             // 
             // returnbookidtext
             // 
-            this.returnbookidtext.Location = new System.Drawing.Point(81, 49);
+            this.returnbookidtext.BackColor = System.Drawing.Color.White;
+            this.returnbookidtext.Location = new System.Drawing.Point(81, 61);
             this.returnbookidtext.Name = "returnbookidtext";
             this.returnbookidtext.ReadOnly = true;
-            this.returnbookidtext.Size = new System.Drawing.Size(137, 20);
+            this.returnbookidtext.Size = new System.Drawing.Size(153, 21);
             this.returnbookidtext.TabIndex = 1;
             // 
             // returnbookidlabel
             // 
             this.returnbookidlabel.AutoSize = true;
-            this.returnbookidlabel.Location = new System.Drawing.Point(7, 56);
+            this.returnbookidlabel.Location = new System.Drawing.Point(7, 68);
             this.returnbookidlabel.Name = "returnbookidlabel";
-            this.returnbookidlabel.Size = new System.Drawing.Size(49, 13);
+            this.returnbookidlabel.Size = new System.Drawing.Size(52, 13);
             this.returnbookidlabel.TabIndex = 0;
             this.returnbookidlabel.Text = "Book ID:";
             // 
             // displayallborrowbutton
             // 
-            this.displayallborrowbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.displayallborrowbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.displayallborrowbutton.Location = new System.Drawing.Point(570, 45);
+            this.displayallborrowbutton.BackColor = System.Drawing.Color.White;
+            this.displayallborrowbutton.FlatAppearance.BorderSize = 0;
+            this.displayallborrowbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.displayallborrowbutton.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold);
+            this.displayallborrowbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.displayallborrowbutton.Location = new System.Drawing.Point(736, 48);
             this.displayallborrowbutton.Name = "displayallborrowbutton";
-            this.displayallborrowbutton.Size = new System.Drawing.Size(223, 31);
+            this.displayallborrowbutton.Size = new System.Drawing.Size(165, 31);
             this.displayallborrowbutton.TabIndex = 21;
-            this.displayallborrowbutton.Text = "Display All Borrowed Books";
+            this.displayallborrowbutton.Text = "All Borrowed Books";
             this.displayallborrowbutton.UseVisualStyleBackColor = false;
             this.displayallborrowbutton.Click += new System.EventHandler(this.displayallborrowbutton_Click);
             // 
@@ -152,50 +181,53 @@
             this.groupBox1.Controls.Add(this.searchbooknametext);
             this.groupBox1.Controls.Add(this.searchbookauthorlabel);
             this.groupBox1.Controls.Add(this.searchbooknamelabel);
-            this.groupBox1.Location = new System.Drawing.Point(570, 85);
+            this.groupBox1.Font = new System.Drawing.Font("Mongolian Baiti", 9F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.groupBox1.Location = new System.Drawing.Point(656, 115);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 111);
+            this.groupBox1.Size = new System.Drawing.Size(250, 133);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
             // searchbookbutton
             // 
-            this.searchbookbutton.Location = new System.Drawing.Point(147, 76);
+            this.searchbookbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchbookbutton.Location = new System.Drawing.Point(147, 88);
             this.searchbookbutton.Name = "searchbookbutton";
-            this.searchbookbutton.Size = new System.Drawing.Size(70, 24);
+            this.searchbookbutton.Size = new System.Drawing.Size(86, 24);
             this.searchbookbutton.TabIndex = 4;
             this.searchbookbutton.Text = "Search";
             this.searchbookbutton.UseVisualStyleBackColor = true;
             // 
             // searchauthortext
             // 
-            this.searchauthortext.Location = new System.Drawing.Point(80, 44);
+            this.searchauthortext.Location = new System.Drawing.Point(80, 56);
             this.searchauthortext.Name = "searchauthortext";
-            this.searchauthortext.Size = new System.Drawing.Size(137, 20);
+            this.searchauthortext.Size = new System.Drawing.Size(153, 21);
             this.searchauthortext.TabIndex = 3;
             // 
             // searchbooknametext
             // 
-            this.searchbooknametext.Location = new System.Drawing.Point(80, 14);
+            this.searchbooknametext.Location = new System.Drawing.Point(80, 26);
             this.searchbooknametext.Name = "searchbooknametext";
-            this.searchbooknametext.Size = new System.Drawing.Size(137, 20);
+            this.searchbooknametext.Size = new System.Drawing.Size(153, 21);
             this.searchbooknametext.TabIndex = 2;
             // 
             // searchbookauthorlabel
             // 
             this.searchbookauthorlabel.AutoSize = true;
-            this.searchbookauthorlabel.Location = new System.Drawing.Point(8, 47);
+            this.searchbookauthorlabel.Location = new System.Drawing.Point(8, 59);
             this.searchbookauthorlabel.Name = "searchbookauthorlabel";
-            this.searchbookauthorlabel.Size = new System.Drawing.Size(41, 13);
+            this.searchbookauthorlabel.Size = new System.Drawing.Size(44, 13);
             this.searchbookauthorlabel.TabIndex = 1;
             this.searchbookauthorlabel.Text = "Author:";
             // 
             // searchbooknamelabel
             // 
             this.searchbooknamelabel.AutoSize = true;
-            this.searchbooknamelabel.Location = new System.Drawing.Point(7, 18);
+            this.searchbooknamelabel.Location = new System.Drawing.Point(7, 30);
             this.searchbooknamelabel.Name = "searchbooknamelabel";
-            this.searchbooknamelabel.Size = new System.Drawing.Size(66, 13);
+            this.searchbooknamelabel.Size = new System.Drawing.Size(67, 13);
             this.searchbooknamelabel.TabIndex = 0;
             this.searchbooknamelabel.Text = "Book Name:";
             // 
@@ -205,7 +237,7 @@
             this.transactionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(921, 24);
             this.menuStrip1.TabIndex = 19;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -234,32 +266,27 @@
             this.borrowgridview.Location = new System.Drawing.Point(12, 29);
             this.borrowgridview.Name = "borrowgridview";
             this.borrowgridview.ReadOnly = true;
-            this.borrowgridview.Size = new System.Drawing.Size(552, 421);
+            this.borrowgridview.Size = new System.Drawing.Size(638, 500);
             this.borrowgridview.TabIndex = 18;
             this.borrowgridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.borrowgridview_CellContentClick);
             // 
-            // returntransactionid
+            // pictureBox1
             // 
-            this.returntransactionid.Location = new System.Drawing.Point(81, 16);
-            this.returntransactionid.Name = "returntransactionid";
-            this.returntransactionid.ReadOnly = true;
-            this.returntransactionid.Size = new System.Drawing.Size(137, 20);
-            this.returntransactionid.TabIndex = 14;
-            // 
-            // transactionlabel
-            // 
-            this.transactionlabel.AutoSize = true;
-            this.transactionlabel.Location = new System.Drawing.Point(7, 23);
-            this.transactionlabel.Name = "transactionlabel";
-            this.transactionlabel.Size = new System.Drawing.Size(49, 13);
-            this.transactionlabel.TabIndex = 13;
-            this.transactionlabel.Text = "Book ID:";
+            this.pictureBox1.Image = global::Login.Properties.Resources.all_borrowed_books;
+            this.pictureBox1.Location = new System.Drawing.Point(671, 34);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(63, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // Return
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(921, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.displayallborrowbutton);
             this.Controls.Add(this.groupBox1);
@@ -276,6 +303,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.borrowgridview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -304,5 +332,6 @@
         private System.Windows.Forms.DataGridView borrowgridview;
         private System.Windows.Forms.TextBox returntransactionid;
         private System.Windows.Forms.Label transactionlabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

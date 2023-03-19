@@ -51,12 +51,14 @@
             this.libsysdbDataSet = new Login.libsysdbDataSet();
             this.booksTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksTableTableAdapter = new Login.libsysdbDataSetTableAdapters.booksTableTableAdapter();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.booksgridview)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.libsysdbDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksTableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // booksgridview
@@ -69,7 +71,7 @@
             this.booksgridview.Location = new System.Drawing.Point(12, 28);
             this.booksgridview.Name = "booksgridview";
             this.booksgridview.ReadOnly = true;
-            this.booksgridview.Size = new System.Drawing.Size(552, 421);
+            this.booksgridview.Size = new System.Drawing.Size(638, 500);
             this.booksgridview.TabIndex = 13;
             this.booksgridview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.booksgridview_CellContentClick);
             // 
@@ -79,7 +81,7 @@
             this.transactionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(921, 24);
             this.menuStrip1.TabIndex = 14;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -107,80 +109,93 @@
             this.groupBox2.Controls.Add(this.booknamelabel);
             this.groupBox2.Controls.Add(this.borrowbookidtext);
             this.groupBox2.Controls.Add(this.bookid);
-            this.groupBox2.Location = new System.Drawing.Point(570, 201);
+            this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.groupBox2.Location = new System.Drawing.Point(656, 263);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(223, 154);
+            this.groupBox2.Size = new System.Drawing.Size(253, 161);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             // 
             // borrowbookbutton
             // 
-            this.borrowbookbutton.Location = new System.Drawing.Point(147, 114);
+            this.borrowbookbutton.BackColor = System.Drawing.Color.White;
+            this.borrowbookbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.borrowbookbutton.Location = new System.Drawing.Point(147, 120);
             this.borrowbookbutton.Name = "borrowbookbutton";
-            this.borrowbookbutton.Size = new System.Drawing.Size(70, 23);
+            this.borrowbookbutton.Size = new System.Drawing.Size(87, 23);
             this.borrowbookbutton.TabIndex = 12;
             this.borrowbookbutton.Text = "Borrow";
-            this.borrowbookbutton.UseVisualStyleBackColor = true;
+            this.borrowbookbutton.UseVisualStyleBackColor = false;
             this.borrowbookbutton.Click += new System.EventHandler(this.borrowbookbutton_Click);
             // 
             // borrowbookauthortext
             // 
-            this.borrowbookauthortext.Location = new System.Drawing.Point(80, 86);
+            this.borrowbookauthortext.BackColor = System.Drawing.Color.White;
+            this.borrowbookauthortext.Location = new System.Drawing.Point(80, 92);
             this.borrowbookauthortext.Name = "borrowbookauthortext";
             this.borrowbookauthortext.ReadOnly = true;
-            this.borrowbookauthortext.Size = new System.Drawing.Size(137, 20);
+            this.borrowbookauthortext.Size = new System.Drawing.Size(154, 22);
             this.borrowbookauthortext.TabIndex = 5;
             // 
             // bookauthorlabel
             // 
             this.bookauthorlabel.AutoSize = true;
-            this.bookauthorlabel.Location = new System.Drawing.Point(7, 89);
+            this.bookauthorlabel.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookauthorlabel.Location = new System.Drawing.Point(7, 95);
             this.bookauthorlabel.Name = "bookauthorlabel";
-            this.bookauthorlabel.Size = new System.Drawing.Size(69, 13);
+            this.bookauthorlabel.Size = new System.Drawing.Size(73, 13);
             this.bookauthorlabel.TabIndex = 4;
             this.bookauthorlabel.Text = "Book Author:";
             // 
             // borrowbooknametext
             // 
-            this.borrowbooknametext.Location = new System.Drawing.Point(80, 53);
+            this.borrowbooknametext.BackColor = System.Drawing.Color.White;
+            this.borrowbooknametext.Location = new System.Drawing.Point(80, 59);
             this.borrowbooknametext.Name = "borrowbooknametext";
             this.borrowbooknametext.ReadOnly = true;
-            this.borrowbooknametext.Size = new System.Drawing.Size(137, 20);
+            this.borrowbooknametext.Size = new System.Drawing.Size(154, 22);
             this.borrowbooknametext.TabIndex = 3;
             // 
             // booknamelabel
             // 
             this.booknamelabel.AutoSize = true;
-            this.booknamelabel.Location = new System.Drawing.Point(7, 60);
+            this.booknamelabel.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.booknamelabel.Location = new System.Drawing.Point(7, 66);
             this.booknamelabel.Name = "booknamelabel";
-            this.booknamelabel.Size = new System.Drawing.Size(66, 13);
+            this.booknamelabel.Size = new System.Drawing.Size(67, 13);
             this.booknamelabel.TabIndex = 2;
             this.booknamelabel.Text = "Book Name:";
             // 
             // borrowbookidtext
             // 
-            this.borrowbookidtext.Location = new System.Drawing.Point(81, 21);
+            this.borrowbookidtext.BackColor = System.Drawing.Color.White;
+            this.borrowbookidtext.Location = new System.Drawing.Point(81, 27);
             this.borrowbookidtext.Name = "borrowbookidtext";
             this.borrowbookidtext.ReadOnly = true;
-            this.borrowbookidtext.Size = new System.Drawing.Size(137, 20);
+            this.borrowbookidtext.Size = new System.Drawing.Size(154, 22);
             this.borrowbookidtext.TabIndex = 1;
             // 
             // bookid
             // 
             this.bookid.AutoSize = true;
-            this.bookid.Location = new System.Drawing.Point(7, 28);
+            this.bookid.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bookid.Location = new System.Drawing.Point(7, 34);
             this.bookid.Name = "bookid";
-            this.bookid.Size = new System.Drawing.Size(49, 13);
+            this.bookid.Size = new System.Drawing.Size(52, 13);
             this.bookid.TabIndex = 0;
             this.bookid.Text = "Book ID:";
             // 
             // displayallbooksbutton
             // 
-            this.displayallbooksbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.displayallbooksbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.displayallbooksbutton.Location = new System.Drawing.Point(570, 44);
+            this.displayallbooksbutton.BackColor = System.Drawing.Color.White;
+            this.displayallbooksbutton.FlatAppearance.BorderSize = 0;
+            this.displayallbooksbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.displayallbooksbutton.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayallbooksbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.displayallbooksbutton.Location = new System.Drawing.Point(735, 36);
             this.displayallbooksbutton.Name = "displayallbooksbutton";
-            this.displayallbooksbutton.Size = new System.Drawing.Size(223, 31);
+            this.displayallbooksbutton.Size = new System.Drawing.Size(152, 31);
             this.displayallbooksbutton.TabIndex = 16;
             this.displayallbooksbutton.Text = "Display All Books";
             this.displayallbooksbutton.UseVisualStyleBackColor = false;
@@ -193,17 +208,20 @@
             this.groupBox1.Controls.Add(this.booknametext);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(570, 84);
+            this.groupBox1.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.groupBox1.Location = new System.Drawing.Point(656, 122);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 111);
+            this.groupBox1.Size = new System.Drawing.Size(253, 124);
             this.groupBox1.TabIndex = 15;
             this.groupBox1.TabStop = false;
             // 
             // searchbookbutton
             // 
-            this.searchbookbutton.Location = new System.Drawing.Point(147, 76);
+            this.searchbookbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchbookbutton.Location = new System.Drawing.Point(150, 85);
             this.searchbookbutton.Name = "searchbookbutton";
-            this.searchbookbutton.Size = new System.Drawing.Size(70, 24);
+            this.searchbookbutton.Size = new System.Drawing.Size(87, 24);
             this.searchbookbutton.TabIndex = 4;
             this.searchbookbutton.Text = "Search";
             this.searchbookbutton.UseVisualStyleBackColor = true;
@@ -211,33 +229,35 @@
             // 
             // authortext
             // 
-            this.authortext.Location = new System.Drawing.Point(80, 44);
+            this.authortext.Location = new System.Drawing.Point(83, 53);
             this.authortext.Name = "authortext";
-            this.authortext.Size = new System.Drawing.Size(137, 20);
+            this.authortext.Size = new System.Drawing.Size(154, 22);
             this.authortext.TabIndex = 3;
             // 
             // booknametext
             // 
-            this.booknametext.Location = new System.Drawing.Point(80, 14);
+            this.booknametext.Location = new System.Drawing.Point(83, 23);
             this.booknametext.Name = "booknametext";
-            this.booknametext.Size = new System.Drawing.Size(137, 20);
+            this.booknametext.Size = new System.Drawing.Size(154, 22);
             this.booknametext.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 47);
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Author:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 18);
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Book Name:";
             // 
@@ -255,11 +275,26 @@
             // 
             this.booksTableTableAdapter.ClearBeforeFill = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Login.Properties.Resources.display_all_books;
+            this.pictureBox1.Location = new System.Drawing.Point(663, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
             // Borrow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(921, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.displayallbooksbutton);
             this.Controls.Add(this.groupBox1);
@@ -278,6 +313,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.libsysdbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksTableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -306,5 +342,6 @@
         private libsysdbDataSet libsysdbDataSet;
         private System.Windows.Forms.BindingSource booksTableBindingSource;
         private libsysdbDataSetTableAdapters.booksTableTableAdapter booksTableTableAdapter;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
