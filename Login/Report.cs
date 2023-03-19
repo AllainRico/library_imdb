@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +47,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("select borrowTable.Status, borrowTable.username, borrowTable.bookID, borrowTable.borrowDate, returnTable.returnDate from borrowTable INNER join returnTable on borrowTable.bookID = returnTable.bookID  ORDER BY borrowTable.borrowDate ASC", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.Status, borrowTable.username, borrowTable.bookID, borrowTable.borrowDate, returnTable.returnDate FROM borrowTable LEFT JOIN returnTable ON borrowTable.bookID = returnTable.bookID ORDER BY borrowTable.borrowDate ASC", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -79,7 +80,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("select borrowTable.Status, borrowTable.username, borrowTable.bookID, borrowTable.borrowDate, returnTable.returnDate from borrowTable INNER join returnTable on borrowTable.bookID = returnTable.bookID  ORDER BY borrowTable.borrowDate ASC", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.Status, borrowTable.username, borrowTable.bookID, borrowTable.borrowDate, returnTable.returnDate FROM borrowTable LEFT JOIN returnTable ON borrowTable.bookID = returnTable.bookID ORDER BY borrowTable.borrowDate ASC\r\n", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -87,60 +88,52 @@ namespace Login
         }
 
 
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+
+
+        private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // Display the title string
-            StringFormat titleFormat = new StringFormat();
-            titleFormat.Alignment = StringAlignment.Center;
-            e.Graphics.DrawString("Library Transactions Report", new Font("Century Gothic", 20, FontStyle.Bold), Brushes.Black, new Point(400, 20), titleFormat);
+            Font titleFont = new Font("Arial", 16, FontStyle.Bold);
+            Font printFont = new Font("Arial", 10);
+            SolidBrush printBrush = new SolidBrush(Color.Black);
 
-            // Display the DataGridView values
-            StringFormat cellFormat = new StringFormat();
-            cellFormat.Alignment = StringAlignment.Near;
-            cellFormat.LineAlignment = StringAlignment.Center;
+            float yPosition = 20;
+            float xPosition = 20;
 
-            int x = 120;    // starting x position
-            int y = 100;    // starting y position
-            int rowHeight = dataGridView1.Rows[0].Height;
-            int colWidth = 0;
+            string title = "Library Transaction Report";
+            SizeF titleSize = e.Graphics.MeasureString(title, titleFont);
+            RectangleF titleRect = new RectangleF(xPosition, yPosition, titleSize.Width, titleSize.Height);
+            e.Graphics.DrawRectangle(Pens.Black, titleRect.X, titleRect.Y, titleRect.Width, titleRect.Height);
+            e.Graphics.DrawString(title, titleFont, printBrush, titleRect);
 
-            // Draw column headers
-            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            yPosition += titleRect.Height + 10;
+            xPosition = 20;
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                e.Graphics.DrawString(col.HeaderText, dataGridView1.Font, Brushes.Black, new RectangleF(x, y, col.Width, rowHeight), cellFormat);
-                x += col.Width;
-                colWidth += col.Width;
-            }
-
-            // Draw rows
-            y += rowHeight;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-                x = 120;
-                foreach (DataGridViewCell cell in row.Cells)
+                for (int j = 0; j < dataGridView1.Columns.Count; j++)
                 {
-                    e.Graphics.DrawString(cell.Value.ToString(), dataGridView1.Font, Brushes.Black, new RectangleF(x, y, dataGridView1.Columns[cell.ColumnIndex].Width, rowHeight), cellFormat);
-                    x += dataGridView1.Columns[cell.ColumnIndex].Width;
+                    string cellValue = dataGridView1.Rows[i].Cells[j].Value.ToString();
+
+                    e.Graphics.DrawString(cellValue, printFont, printBrush, xPosition, yPosition);
+
+                    xPosition += dataGridView1.Columns[j].Width;
                 }
-                y += rowHeight;
+
+                yPosition += printFont.GetHeight();
+                xPosition = 20;
             }
-
-            // Add page number
-            StringFormat pageNumberFormat = new StringFormat();
-            pageNumberFormat.Alignment = StringAlignment.Far;
-            e.Graphics.DrawString("Page " + (printDocument1.PrinterSettings.FromPage + e.PageSettings.PrinterSettings.Copies * e.PageSettings.PrinterSettings.ToPage - 1).ToString(), dataGridView1.Font, Brushes.Black, new RectangleF(e.PageBounds.Left, e.PageBounds.Bottom - dataGridView1.Font.Height, e.PageBounds.Width, dataGridView1.Font.Height), pageNumberFormat);
         }
-
-
-
 
         private void printbutton_Click(object sender, EventArgs e)
         {
-            printPreviewDialog1.Document = printDocument1;
-            printPreviewDialog1.WindowState = FormWindowState.Maximized;
-            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
-            printPreviewDialog1.ShowDialog();
+            PrintDocument pd = new PrintDocument();
 
+            pd.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
+
+            PrintPreviewDialog ppd = new PrintPreviewDialog();
+            ppd.Document = pd;
+            ppd.ShowDialog();
         }
+
     }
 }

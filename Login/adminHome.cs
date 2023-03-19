@@ -58,5 +58,21 @@ namespace Login
             report.Show();
             Visible = false;
         }
+
+        private void gosignout_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to sign out?";
+            string title = "Sign Out Attempt";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Sign out Succesful!", "Sign out");
+                loginForm signout = new loginForm();
+                signout.Show();
+                Visible = false;
+
+            }
+        }
     }
 }
