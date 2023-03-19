@@ -91,6 +91,9 @@ namespace Login
                                 cmd1.Parameters.AddWithValue("@username", usernameTextBox.Text);
                                 cmd1.Parameters.AddWithValue("@pass", encpass);
                                 cmd1.ExecuteNonQuery();
+                                SqlCommand cmd2 = new SqlCommand("INSERT INTO borrowersTable(username) VALUES (@username)", con);
+                                cmd2.Parameters.AddWithValue("@username",usernameTextBox.Text);
+                                cmd2.ExecuteNonQuery();
                                 con.Close();
 
                                 MessageBox.Show("Account created successfully! - Please input credentials in the Login Form", "Successful!");

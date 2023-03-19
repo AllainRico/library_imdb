@@ -33,7 +33,6 @@
             this.borrowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.returnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.updateinfobutton = new System.Windows.Forms.Button();
             this.booksreturnedtext = new System.Windows.Forms.TextBox();
             this.booksborrowedtext = new System.Windows.Forms.TextBox();
             this.contactnumbertext = new System.Windows.Forms.TextBox();
@@ -50,6 +49,8 @@
             this.borrowerIDlabel = new System.Windows.Forms.Label();
             this.borrowbutton = new System.Windows.Forms.Button();
             this.returnbookbutton = new System.Windows.Forms.Button();
+            this.updatebutton = new System.Windows.Forms.Button();
+            this.gosignout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +58,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.transactionToolStripMenuItem});
+            this.transactionToolStripMenuItem,
+            this.gosignout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(747, 24);
@@ -76,20 +78,20 @@
             // borrowToolStripMenuItem
             // 
             this.borrowToolStripMenuItem.Name = "borrowToolStripMenuItem";
-            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.borrowToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.borrowToolStripMenuItem.Text = "Borrow";
             this.borrowToolStripMenuItem.Click += new System.EventHandler(this.borrowToolStripMenuItem_Click);
             // 
             // returnToolStripMenuItem
             // 
             this.returnToolStripMenuItem.Name = "returnToolStripMenuItem";
-            this.returnToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.returnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.returnToolStripMenuItem.Text = "Return";
             this.returnToolStripMenuItem.Click += new System.EventHandler(this.returnToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.updateinfobutton);
+            this.groupBox1.Controls.Add(this.updatebutton);
             this.groupBox1.Controls.Add(this.booksreturnedtext);
             this.groupBox1.Controls.Add(this.booksborrowedtext);
             this.groupBox1.Controls.Add(this.contactnumbertext);
@@ -110,63 +112,67 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             // 
-            // updateinfobutton
-            // 
-            this.updateinfobutton.Location = new System.Drawing.Point(258, 304);
-            this.updateinfobutton.Name = "updateinfobutton";
-            this.updateinfobutton.Size = new System.Drawing.Size(108, 23);
-            this.updateinfobutton.TabIndex = 17;
-            this.updateinfobutton.Text = "Update Information";
-            this.updateinfobutton.UseVisualStyleBackColor = true;
-            this.updateinfobutton.Visible = false;
-            // 
             // booksreturnedtext
             // 
+            this.booksreturnedtext.Enabled = false;
             this.booksreturnedtext.Location = new System.Drawing.Point(160, 268);
             this.booksreturnedtext.Name = "booksreturnedtext";
+            this.booksreturnedtext.ReadOnly = true;
             this.booksreturnedtext.Size = new System.Drawing.Size(206, 20);
             this.booksreturnedtext.TabIndex = 16;
             // 
             // booksborrowedtext
             // 
+            this.booksborrowedtext.Enabled = false;
             this.booksborrowedtext.Location = new System.Drawing.Point(160, 226);
             this.booksborrowedtext.Name = "booksborrowedtext";
+            this.booksborrowedtext.ReadOnly = true;
             this.booksborrowedtext.Size = new System.Drawing.Size(206, 20);
             this.booksborrowedtext.TabIndex = 15;
             // 
             // contactnumbertext
             // 
+            this.contactnumbertext.Enabled = false;
             this.contactnumbertext.Location = new System.Drawing.Point(160, 186);
             this.contactnumbertext.Name = "contactnumbertext";
+            this.contactnumbertext.ReadOnly = true;
             this.contactnumbertext.Size = new System.Drawing.Size(206, 20);
             this.contactnumbertext.TabIndex = 14;
             // 
             // lastnametext
             // 
+            this.lastnametext.Enabled = false;
             this.lastnametext.Location = new System.Drawing.Point(160, 146);
             this.lastnametext.Name = "lastnametext";
+            this.lastnametext.ReadOnly = true;
             this.lastnametext.Size = new System.Drawing.Size(206, 20);
             this.lastnametext.TabIndex = 13;
             // 
             // firstnametext
             // 
+            this.firstnametext.Enabled = false;
             this.firstnametext.Location = new System.Drawing.Point(160, 106);
             this.firstnametext.Name = "firstnametext";
+            this.firstnametext.ReadOnly = true;
             this.firstnametext.Size = new System.Drawing.Size(206, 20);
             this.firstnametext.TabIndex = 12;
             // 
             // usernametext
             // 
+            this.usernametext.Enabled = false;
             this.usernametext.Location = new System.Drawing.Point(160, 66);
             this.usernametext.Name = "usernametext";
+            this.usernametext.ReadOnly = true;
             this.usernametext.Size = new System.Drawing.Size(206, 20);
             this.usernametext.TabIndex = 11;
             this.usernametext.TextChanged += new System.EventHandler(this.usernametext_TextChanged);
             // 
             // borrowerIDtext
             // 
+            this.borrowerIDtext.Enabled = false;
             this.borrowerIDtext.Location = new System.Drawing.Point(160, 26);
             this.borrowerIDtext.Name = "borrowerIDtext";
+            this.borrowerIDtext.ReadOnly = true;
             this.borrowerIDtext.Size = new System.Drawing.Size(206, 20);
             this.borrowerIDtext.TabIndex = 10;
             this.borrowerIDtext.TextChanged += new System.EventHandler(this.borrowerIDtext_TextChanged);
@@ -260,6 +266,24 @@
             this.returnbookbutton.UseVisualStyleBackColor = false;
             this.returnbookbutton.Click += new System.EventHandler(this.returnbookbutton_Click);
             // 
+            // updatebutton
+            // 
+            this.updatebutton.Location = new System.Drawing.Point(247, 294);
+            this.updatebutton.Name = "updatebutton";
+            this.updatebutton.Size = new System.Drawing.Size(119, 23);
+            this.updatebutton.TabIndex = 17;
+            this.updatebutton.Text = "Update Credentials";
+            this.updatebutton.UseVisualStyleBackColor = true;
+            this.updatebutton.Visible = false;
+            this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
+            // 
+            // gosignout
+            // 
+            this.gosignout.Name = "gosignout";
+            this.gosignout.Size = new System.Drawing.Size(65, 20);
+            this.gosignout.Text = "Sign Out";
+            this.gosignout.Click += new System.EventHandler(this.gosignout_Click);
+            // 
             // userHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -289,7 +313,6 @@
         private System.Windows.Forms.ToolStripMenuItem borrowToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem returnToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button updateinfobutton;
         private System.Windows.Forms.TextBox booksreturnedtext;
         private System.Windows.Forms.TextBox booksborrowedtext;
         private System.Windows.Forms.TextBox contactnumbertext;
@@ -306,5 +329,7 @@
         private System.Windows.Forms.Button borrowbutton;
         private System.Windows.Forms.Button returnbookbutton;
         public System.Windows.Forms.TextBox usernametext;
+        private System.Windows.Forms.Button updatebutton;
+        private System.Windows.Forms.ToolStripMenuItem gosignout;
     }
 }

@@ -79,55 +79,88 @@ namespace Login
 
         private void userHome_Load(object sender, EventArgs e)
         {
-            if (borrowerIDtext.Text != "")
+            if (string.IsNullOrEmpty(borrowerIDtext.Text))
             {
-                borrowerIDtext.ReadOnly = true;
-                borrowerIDtext.Enabled = false;
+                borrowerIDtext.ReadOnly = false;
+                borrowerIDtext.Enabled = true;
             }
-            if (usernametext.Text != "")
+            if (string.IsNullOrEmpty(usernametext.Text))
             {
-                usernametext.ReadOnly = true;
-                usernametext.Enabled = false;
+                usernametext.ReadOnly = false;
+                usernametext.Enabled = true;
             }
-            if (firstnametext.Text != "")
+            if (string.IsNullOrEmpty(firstnametext.Text))
             {
-                firstnametext.ReadOnly = true;
-                firstnametext.Enabled = false;
+                firstnametext.ReadOnly = false;
+                firstnametext.Enabled = true;
             }
-            if (lastnametext.Text != "")
+            if (string.IsNullOrEmpty(lastnametext.Text))
             {
-                lastnametext.ReadOnly = true;
-                lastnametext.Enabled = false;
+                lastnametext.ReadOnly = false;
+                lastnametext.Enabled = true;
             }
-            if (contactnumbertext.Text != "")
+            if (string.IsNullOrEmpty(contactnumbertext.Text))
             {
-                contactnumbertext.ReadOnly = true;
-                contactnumbertext.Enabled = false;
+                contactnumbertext.ReadOnly = false;
+                contactnumbertext.Enabled = true;
             }
 
-            if (borrowerIDtext.Text != "" ||
-                usernametext.Text != "" ||
-                firstnametext.Text != "" ||
-                lastnametext.Text != "" ||
-                contactnumbertext.Text != ""
-                )
+            if (string.IsNullOrEmpty(borrowerIDtext.Text) ||
+                string.IsNullOrEmpty(usernametext.Text) ||
+                string.IsNullOrEmpty(firstnametext.Text) ||
+                string.IsNullOrEmpty(lastnametext.Text) ||
+                string.IsNullOrEmpty(contactnumbertext.Text)
+            )
             {
-                updateinfobutton.Visible = false;
+                updatebutton.Visible = true;
             }
 
             booksborrowedtext.ReadOnly = true;
             booksborrowedtext.Enabled = false;
             booksreturnedtext.ReadOnly = true;
             booksreturnedtext.Enabled = false;
-
         }
 
-        private void returnbookbutton_Click(object sender, EventArgs e)
+            private void returnbookbutton_Click(object sender, EventArgs e)
         {
             Return balik = new Return();
             balik.TextToPass = username;
             balik.Show();
             Visible = false;
+        }
+
+        private void updatebutton_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
+            con.Open();
+
+            SqlCommand cmd2 = new SqlCommand("UPDATE borrowersTable SET firstname = '" + firstnametext.Text + "', lastname = '" + lastnametext.Text + "', contactnumber = " + contactnumbertext.Text + " where username = '"+ usernametext.Text+"';", con);
+            cmd2.ExecuteNonQuery();
+
+            MessageBox.Show("Information added successfully", "Success");
+
+            firstnametext.Enabled = false;
+            lastnametext.Enabled = false;
+            contactnumbertext.Enabled = false;
+            updatebutton.Visible = false;
+
+        }
+
+        private void gosignout_Click(object sender, EventArgs e)
+        {
+            string message = "Are you sure you want to sign out?";
+            string title = "Sign Out Attempt";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                MessageBox.Show("Sign out Succesful!", "Sign out");
+                loginForm signout = new loginForm();
+                signout.Show();
+                Visible = false;
+
+            }
         }
     }
 }
