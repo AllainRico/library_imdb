@@ -36,9 +36,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.displayallbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.todatetimepicker = new System.Windows.Forms.DateTimePicker();
             this.tolabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fromdatetimepicker = new System.Windows.Forms.DateTimePicker();
             this.fromlabel = new System.Windows.Forms.Label();
             this.datefilterbutton = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
@@ -110,13 +110,14 @@
             this.displayallbutton.TabIndex = 19;
             this.displayallbutton.Text = "Display All";
             this.displayallbutton.UseVisualStyleBackColor = false;
+            this.displayallbutton.Click += new System.EventHandler(this.displayallbutton_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.datefilterbutton);
-            this.groupBox1.Controls.Add(this.dateTimePicker2);
+            this.groupBox1.Controls.Add(this.todatetimepicker);
             this.groupBox1.Controls.Add(this.tolabel);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.fromdatetimepicker);
             this.groupBox1.Controls.Add(this.fromlabel);
             this.groupBox1.Location = new System.Drawing.Point(613, 67);
             this.groupBox1.Name = "groupBox1";
@@ -124,13 +125,13 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             // 
-            // dateTimePicker2
+            // todatetimepicker
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(53, 56);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(114, 20);
-            this.dateTimePicker2.TabIndex = 21;
+            this.todatetimepicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.todatetimepicker.Location = new System.Drawing.Point(53, 56);
+            this.todatetimepicker.Name = "todatetimepicker";
+            this.todatetimepicker.Size = new System.Drawing.Size(114, 20);
+            this.todatetimepicker.TabIndex = 21;
             // 
             // tolabel
             // 
@@ -141,13 +142,13 @@
             this.tolabel.TabIndex = 20;
             this.tolabel.Text = "To:";
             // 
-            // dateTimePicker1
+            // fromdatetimepicker
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(53, 24);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(114, 20);
-            this.dateTimePicker1.TabIndex = 19;
+            this.fromdatetimepicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fromdatetimepicker.Location = new System.Drawing.Point(53, 24);
+            this.fromdatetimepicker.Name = "fromdatetimepicker";
+            this.fromdatetimepicker.Size = new System.Drawing.Size(114, 20);
+            this.fromdatetimepicker.TabIndex = 19;
             // 
             // fromlabel
             // 
@@ -166,6 +167,7 @@
             this.datefilterbutton.TabIndex = 22;
             this.datefilterbutton.Text = "Apply";
             this.datefilterbutton.UseVisualStyleBackColor = true;
+            this.datefilterbutton.Click += new System.EventHandler(this.datefilterbutton_Click);
             // 
             // Report
             // 
@@ -201,9 +203,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button displayallbutton;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker todatetimepicker;
         private System.Windows.Forms.Label tolabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fromdatetimepicker;
         private System.Windows.Forms.Label fromlabel;
         private System.Windows.Forms.Button datefilterbutton;
     }
