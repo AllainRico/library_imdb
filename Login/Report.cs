@@ -16,5 +16,27 @@ namespace Login
         {
             InitializeComponent();
         }
+
+       
+        private void goAdminHome_Click(object sender, EventArgs e)
+        {
+            adminHome home = new adminHome();
+            home.Show();
+            Visible = false;
+        }
+
+        private void goBooks_Click(object sender, EventArgs e)
+        {
+            Books books = new Books();
+            books.Show();
+            Visible = false;
+        }
+
+        private void goBorrower_Click(object sender, EventArgs e)
+        {
+            borrower borrower = new borrower();
+            borrower.Show();
+            Visible = false;
+        }
     }
 }
