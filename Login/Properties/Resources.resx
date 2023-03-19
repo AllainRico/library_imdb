@@ -121,14 +121,23 @@
   <data name="user-creds-design" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>user-creds-design.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="admin-home-logo (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>admin-home-logo (1).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>admin-books.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="admin-report" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>admin-report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="borrow-book" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>borrow-book.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="display-all-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>display-all-books.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="books" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>books.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="display-all-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>display-all-books.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="return-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>return-books.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,10 +145,13 @@
   <data name="login_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>login_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="all-borrowed-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>all-borrowed-books.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_books" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>icon_books.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="all-borrowed-books" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>all-borrowed-books.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="admin-borrowers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>admin-borrowers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

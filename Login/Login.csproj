@@ -191,6 +191,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.ico" />
+    <None Include="Properties\admin-borrowers.png" />
+    <None Include="Properties\admin-report.png" />
+    <None Include="Properties\admin-books.png" />
+    <None Include="Properties\admin-home-logo %281%29.gif" />
     <None Include="Properties\all-borrowed-books.gif" />
     <None Include="Properties\display-all-books.gif" />
     <None Include="Properties\user-creds-design.gif" />
