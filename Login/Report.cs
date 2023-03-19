@@ -86,19 +86,61 @@ namespace Login
             dataGridView1.DataSource = dtbl;
         }
 
-        
+
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            Bitmap imagebmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);
-            dataGridView1.DrawToBitmap(imagebmp, new Rectangle(0,0,dataGridView1.Width, dataGridView1.Height));
-            e.Graphics.DrawImage(imagebmp, 120, 20);
+            // Display the title string
+            StringFormat titleFormat = new StringFormat();
+            titleFormat.Alignment = StringAlignment.Center;
+            e.Graphics.DrawString("Library Transactions Report", new Font("Century Gothic", 20, FontStyle.Bold), Brushes.Black, new Point(400, 20), titleFormat);
+
+            // Display the DataGridView values
+            StringFormat cellFormat = new StringFormat();
+            cellFormat.Alignment = StringAlignment.Near;
+            cellFormat.LineAlignment = StringAlignment.Center;
+
+            int x = 120;    // starting x position
+            int y = 100;    // starting y position
+            int rowHeight = dataGridView1.Rows[0].Height;
+            int colWidth = 0;
+
+            // Draw column headers
+            foreach (DataGridViewColumn col in dataGridView1.Columns)
+            {
+                e.Graphics.DrawString(col.HeaderText, dataGridView1.Font, Brushes.Black, new RectangleF(x, y, col.Width, rowHeight), cellFormat);
+                x += col.Width;
+                colWidth += col.Width;
+            }
+
+            // Draw rows
+            y += rowHeight;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                x = 120;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    e.Graphics.DrawString(cell.Value.ToString(), dataGridView1.Font, Brushes.Black, new RectangleF(x, y, dataGridView1.Columns[cell.ColumnIndex].Width, rowHeight), cellFormat);
+                    x += dataGridView1.Columns[cell.ColumnIndex].Width;
+                }
+                y += rowHeight;
+            }
+
+            // Add page number
+            StringFormat pageNumberFormat = new StringFormat();
+            pageNumberFormat.Alignment = StringAlignment.Far;
+            e.Graphics.DrawString("Page " + (printDocument1.PrinterSettings.FromPage + e.PageSettings.PrinterSettings.Copies * e.PageSettings.PrinterSettings.ToPage - 1).ToString(), dataGridView1.Font, Brushes.Black, new RectangleF(e.PageBounds.Left, e.PageBounds.Bottom - dataGridView1.Font.Height, e.PageBounds.Width, dataGridView1.Font.Height), pageNumberFormat);
         }
+
+
+
 
         private void printbutton_Click(object sender, EventArgs e)
         {
             printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.WindowState = FormWindowState.Maximized;
             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
             printPreviewDialog1.ShowDialog();
+
         }
     }
 }
