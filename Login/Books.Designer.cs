@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Books));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.booksdbDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.booksdbDataSet = new Login.booksdbDataSet();
@@ -59,6 +60,7 @@
             this.booksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSet)).BeginInit();
@@ -66,6 +68,7 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSetBindingSource1)).BeginInit();
             this.menuStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -78,7 +81,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(12, 27);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(552, 421);
+            this.dataGridView1.Size = new System.Drawing.Size(638, 500);
             this.dataGridView1.TabIndex = 0;
             // 
             // booksdbDataSetBindingSource
@@ -98,18 +101,21 @@
             this.groupBox1.Controls.Add(this.booknametext);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(570, 74);
+            this.groupBox1.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F);
+            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.groupBox1.Location = new System.Drawing.Point(656, 109);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(223, 111);
+            this.groupBox1.Size = new System.Drawing.Size(253, 124);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // searchbookbutton
             // 
-            this.searchbookbutton.Location = new System.Drawing.Point(147, 76);
+            this.searchbookbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchbookbutton.Location = new System.Drawing.Point(150, 85);
             this.searchbookbutton.Name = "searchbookbutton";
-            this.searchbookbutton.Size = new System.Drawing.Size(70, 24);
+            this.searchbookbutton.Size = new System.Drawing.Size(87, 24);
             this.searchbookbutton.TabIndex = 4;
             this.searchbookbutton.Text = "Search";
             this.searchbookbutton.UseVisualStyleBackColor = true;
@@ -117,43 +123,48 @@
             // 
             // authortext
             // 
-            this.authortext.Location = new System.Drawing.Point(80, 44);
+            this.authortext.Location = new System.Drawing.Point(83, 53);
             this.authortext.Name = "authortext";
-            this.authortext.Size = new System.Drawing.Size(137, 20);
+            this.authortext.Size = new System.Drawing.Size(154, 22);
             this.authortext.TabIndex = 3;
             // 
             // booknametext
             // 
-            this.booknametext.Location = new System.Drawing.Point(80, 14);
+            this.booknametext.Location = new System.Drawing.Point(83, 23);
             this.booknametext.Name = "booknametext";
-            this.booknametext.Size = new System.Drawing.Size(137, 20);
+            this.booknametext.Size = new System.Drawing.Size(154, 22);
             this.booknametext.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 47);
+            this.label2.Font = new System.Drawing.Font("Mongolian Baiti", 9F);
+            this.label2.Location = new System.Drawing.Point(11, 56);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Author:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 18);
+            this.label1.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Book Name:";
             // 
             // displayallbutton
             // 
-            this.displayallbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.displayallbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.displayallbutton.Location = new System.Drawing.Point(570, 34);
+            this.displayallbutton.BackColor = System.Drawing.Color.White;
+            this.displayallbutton.FlatAppearance.BorderSize = 0;
+            this.displayallbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.displayallbutton.Font = new System.Drawing.Font("Mongolian Baiti", 11.25F, System.Drawing.FontStyle.Bold);
+            this.displayallbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.displayallbutton.Location = new System.Drawing.Point(735, 36);
             this.displayallbutton.Name = "displayallbutton";
-            this.displayallbutton.Size = new System.Drawing.Size(223, 31);
+            this.displayallbutton.Size = new System.Drawing.Size(152, 31);
             this.displayallbutton.TabIndex = 2;
             this.displayallbutton.Text = "Display All Books";
             this.displayallbutton.UseVisualStyleBackColor = false;
@@ -174,18 +185,22 @@
             this.groupBox2.Controls.Add(this.booknamelabel);
             this.groupBox2.Controls.Add(this.addbookidtext);
             this.groupBox2.Controls.Add(this.bookid);
-            this.groupBox2.Location = new System.Drawing.Point(570, 191);
+            this.groupBox2.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(6)))), ((int)(((byte)(35)))), ((int)(((byte)(43)))));
+            this.groupBox2.Location = new System.Drawing.Point(656, 250);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(223, 240);
+            this.groupBox2.Size = new System.Drawing.Size(253, 240);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // addbookbutton
             // 
+            this.addbookbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addbookbutton.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F);
             this.addbookbutton.Location = new System.Drawing.Point(147, 208);
             this.addbookbutton.Name = "addbookbutton";
-            this.addbookbutton.Size = new System.Drawing.Size(70, 23);
+            this.addbookbutton.Size = new System.Drawing.Size(87, 23);
             this.addbookbutton.TabIndex = 12;
             this.addbookbutton.Text = "Add";
             this.addbookbutton.UseVisualStyleBackColor = true;
@@ -193,9 +208,9 @@
             // 
             // addbookquantitytext
             // 
-            this.addbookquantitytext.Location = new System.Drawing.Point(80, 173);
+            this.addbookquantitytext.Location = new System.Drawing.Point(82, 172);
             this.addbookquantitytext.Name = "addbookquantitytext";
-            this.addbookquantitytext.Size = new System.Drawing.Size(137, 20);
+            this.addbookquantitytext.Size = new System.Drawing.Size(154, 21);
             this.addbookquantitytext.TabIndex = 11;
             // 
             // bookquantitylabel
@@ -203,15 +218,15 @@
             this.bookquantitylabel.AutoSize = true;
             this.bookquantitylabel.Location = new System.Drawing.Point(10, 173);
             this.bookquantitylabel.Name = "bookquantitylabel";
-            this.bookquantitylabel.Size = new System.Drawing.Size(49, 13);
+            this.bookquantitylabel.Size = new System.Drawing.Size(51, 13);
             this.bookquantitylabel.TabIndex = 10;
             this.bookquantitylabel.Text = "Quantity:";
             // 
             // addbookgenretext
             // 
-            this.addbookgenretext.Location = new System.Drawing.Point(80, 143);
+            this.addbookgenretext.Location = new System.Drawing.Point(82, 142);
             this.addbookgenretext.Name = "addbookgenretext";
-            this.addbookgenretext.Size = new System.Drawing.Size(137, 20);
+            this.addbookgenretext.Size = new System.Drawing.Size(154, 21);
             this.addbookgenretext.TabIndex = 9;
             // 
             // bookgenrelabel
@@ -225,9 +240,9 @@
             // 
             // addyeartext
             // 
-            this.addyeartext.Location = new System.Drawing.Point(80, 115);
+            this.addyeartext.Location = new System.Drawing.Point(82, 114);
             this.addyeartext.Name = "addyeartext";
-            this.addyeartext.Size = new System.Drawing.Size(137, 20);
+            this.addyeartext.Size = new System.Drawing.Size(154, 21);
             this.addyeartext.TabIndex = 7;
             // 
             // bookyeartext
@@ -235,15 +250,15 @@
             this.bookyeartext.AutoSize = true;
             this.bookyeartext.Location = new System.Drawing.Point(7, 115);
             this.bookyeartext.Name = "bookyeartext";
-            this.bookyeartext.Size = new System.Drawing.Size(32, 13);
+            this.bookyeartext.Size = new System.Drawing.Size(33, 13);
             this.bookyeartext.TabIndex = 6;
             this.bookyeartext.Text = "Year:";
             // 
             // addbookauthortext
             // 
-            this.addbookauthortext.Location = new System.Drawing.Point(80, 86);
+            this.addbookauthortext.Location = new System.Drawing.Point(82, 85);
             this.addbookauthortext.Name = "addbookauthortext";
-            this.addbookauthortext.Size = new System.Drawing.Size(137, 20);
+            this.addbookauthortext.Size = new System.Drawing.Size(154, 21);
             this.addbookauthortext.TabIndex = 5;
             // 
             // bookauthorlabel
@@ -251,15 +266,15 @@
             this.bookauthorlabel.AutoSize = true;
             this.bookauthorlabel.Location = new System.Drawing.Point(7, 89);
             this.bookauthorlabel.Name = "bookauthorlabel";
-            this.bookauthorlabel.Size = new System.Drawing.Size(69, 13);
+            this.bookauthorlabel.Size = new System.Drawing.Size(73, 13);
             this.bookauthorlabel.TabIndex = 4;
             this.bookauthorlabel.Text = "Book Author:";
             // 
             // addbooknametext
             // 
-            this.addbooknametext.Location = new System.Drawing.Point(80, 53);
+            this.addbooknametext.Location = new System.Drawing.Point(82, 52);
             this.addbooknametext.Name = "addbooknametext";
-            this.addbooknametext.Size = new System.Drawing.Size(137, 20);
+            this.addbooknametext.Size = new System.Drawing.Size(154, 21);
             this.addbooknametext.TabIndex = 3;
             // 
             // booknamelabel
@@ -267,16 +282,16 @@
             this.booknamelabel.AutoSize = true;
             this.booknamelabel.Location = new System.Drawing.Point(7, 60);
             this.booknamelabel.Name = "booknamelabel";
-            this.booknamelabel.Size = new System.Drawing.Size(66, 13);
+            this.booknamelabel.Size = new System.Drawing.Size(67, 13);
             this.booknamelabel.TabIndex = 2;
             this.booknamelabel.Text = "Book Name:";
             this.booknamelabel.Click += new System.EventHandler(this.booknamelabel_Click);
             // 
             // addbookidtext
             // 
-            this.addbookidtext.Location = new System.Drawing.Point(81, 21);
+            this.addbookidtext.Location = new System.Drawing.Point(83, 20);
             this.addbookidtext.Name = "addbookidtext";
-            this.addbookidtext.Size = new System.Drawing.Size(137, 20);
+            this.addbookidtext.Size = new System.Drawing.Size(154, 21);
             this.addbookidtext.TabIndex = 1;
             // 
             // bookid
@@ -284,7 +299,7 @@
             this.bookid.AutoSize = true;
             this.bookid.Location = new System.Drawing.Point(7, 28);
             this.bookid.Name = "bookid";
-            this.bookid.Size = new System.Drawing.Size(49, 13);
+            this.bookid.Size = new System.Drawing.Size(52, 13);
             this.bookid.TabIndex = 0;
             this.bookid.Text = "Book ID:";
             // 
@@ -330,22 +345,34 @@
             this.reportToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip2.Size = new System.Drawing.Size(921, 24);
             this.menuStrip2.TabIndex = 12;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Login.Properties.Resources.display_all_books;
+            this.pictureBox1.Location = new System.Drawing.Point(663, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(77, 72);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
             // 
             // Books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(921, 561);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.displayallbutton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Books";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Books";
@@ -359,6 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.booksdbDataSetBindingSource1)).EndInit();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +424,6 @@
         private System.Windows.Forms.ToolStripMenuItem booksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

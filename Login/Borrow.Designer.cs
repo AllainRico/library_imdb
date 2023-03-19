@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Borrow));
             this.booksgridview = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.transactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -96,7 +97,7 @@
             // gouserhome
             // 
             this.gouserhome.Name = "gouserhome";
-            this.gouserhome.Size = new System.Drawing.Size(180, 22);
+            this.gouserhome.Size = new System.Drawing.Size(107, 22);
             this.gouserhome.Text = "Home";
             this.gouserhome.Click += new System.EventHandler(this.gouserhome_Click);
             // 
@@ -300,6 +301,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.booksgridview);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Borrow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Borrow";
