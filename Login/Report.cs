@@ -85,5 +85,20 @@ namespace Login
 
             dataGridView1.DataSource = dtbl;
         }
+
+        
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Bitmap imagebmp = new Bitmap(dataGridView1.Width, dataGridView1.Height);
+            dataGridView1.DrawToBitmap(imagebmp, new Rectangle(0,0,dataGridView1.Width, dataGridView1.Height));
+            e.Graphics.DrawImage(imagebmp, 120, 20);
+        }
+
+        private void printbutton_Click(object sender, EventArgs e)
+        {
+            printPreviewDialog1.Document = printDocument1;
+            printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+            printPreviewDialog1.ShowDialog();
+        }
     }
 }

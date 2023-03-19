@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Report));
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.goAdminHome = new System.Windows.Forms.ToolStripMenuItem();
@@ -36,11 +37,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.displayallbutton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.datefilterbutton = new System.Windows.Forms.Button();
             this.todatetimepicker = new System.Windows.Forms.DateTimePicker();
             this.tolabel = new System.Windows.Forms.Label();
             this.fromdatetimepicker = new System.Windows.Forms.DateTimePicker();
             this.fromlabel = new System.Windows.Forms.Label();
-            this.datefilterbutton = new System.Windows.Forms.Button();
+            this.printbutton = new System.Windows.Forms.Button();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -69,21 +73,21 @@
             // goAdminHome
             // 
             this.goAdminHome.Name = "goAdminHome";
-            this.goAdminHome.Size = new System.Drawing.Size(180, 22);
+            this.goAdminHome.Size = new System.Drawing.Size(122, 22);
             this.goAdminHome.Text = "Home";
             this.goAdminHome.Click += new System.EventHandler(this.goAdminHome_Click);
             // 
             // goBooks
             // 
             this.goBooks.Name = "goBooks";
-            this.goBooks.Size = new System.Drawing.Size(180, 22);
+            this.goBooks.Size = new System.Drawing.Size(122, 22);
             this.goBooks.Text = "Books";
             this.goBooks.Click += new System.EventHandler(this.goBooks_Click);
             // 
             // goBorrower
             // 
             this.goBorrower.Name = "goBorrower";
-            this.goBorrower.Size = new System.Drawing.Size(180, 22);
+            this.goBorrower.Size = new System.Drawing.Size(122, 22);
             this.goBorrower.Text = "Borrower";
             this.goBorrower.Click += new System.EventHandler(this.goBorrower_Click);
             // 
@@ -104,9 +108,9 @@
             // 
             this.displayallbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.displayallbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.displayallbutton.Location = new System.Drawing.Point(613, 27);
+            this.displayallbutton.Location = new System.Drawing.Point(629, 27);
             this.displayallbutton.Name = "displayallbutton";
-            this.displayallbutton.Size = new System.Drawing.Size(181, 31);
+            this.displayallbutton.Size = new System.Drawing.Size(151, 25);
             this.displayallbutton.TabIndex = 19;
             this.displayallbutton.Text = "Display All";
             this.displayallbutton.UseVisualStyleBackColor = false;
@@ -119,11 +123,21 @@
             this.groupBox1.Controls.Add(this.tolabel);
             this.groupBox1.Controls.Add(this.fromdatetimepicker);
             this.groupBox1.Controls.Add(this.fromlabel);
-            this.groupBox1.Location = new System.Drawing.Point(613, 67);
+            this.groupBox1.Location = new System.Drawing.Point(613, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(181, 127);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
+            // 
+            // datefilterbutton
+            // 
+            this.datefilterbutton.Location = new System.Drawing.Point(104, 83);
+            this.datefilterbutton.Name = "datefilterbutton";
+            this.datefilterbutton.Size = new System.Drawing.Size(63, 26);
+            this.datefilterbutton.TabIndex = 22;
+            this.datefilterbutton.Text = "Apply";
+            this.datefilterbutton.UseVisualStyleBackColor = true;
+            this.datefilterbutton.Click += new System.EventHandler(this.datefilterbutton_Click);
             // 
             // todatetimepicker
             // 
@@ -159,15 +173,31 @@
             this.fromlabel.TabIndex = 18;
             this.fromlabel.Text = "From:";
             // 
-            // datefilterbutton
+            // printbutton
             // 
-            this.datefilterbutton.Location = new System.Drawing.Point(104, 83);
-            this.datefilterbutton.Name = "datefilterbutton";
-            this.datefilterbutton.Size = new System.Drawing.Size(63, 26);
-            this.datefilterbutton.TabIndex = 22;
-            this.datefilterbutton.Text = "Apply";
-            this.datefilterbutton.UseVisualStyleBackColor = true;
-            this.datefilterbutton.Click += new System.EventHandler(this.datefilterbutton_Click);
+            this.printbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.printbutton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.printbutton.Location = new System.Drawing.Point(629, 74);
+            this.printbutton.Name = "printbutton";
+            this.printbutton.Size = new System.Drawing.Size(151, 25);
+            this.printbutton.TabIndex = 21;
+            this.printbutton.Text = "Print";
+            this.printbutton.UseVisualStyleBackColor = false;
+            this.printbutton.Click += new System.EventHandler(this.printbutton_Click);
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
             // 
             // Report
             // 
@@ -175,6 +205,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.printbutton);
             this.Controls.Add(this.displayallbutton);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.menuStrip2);
@@ -208,5 +239,8 @@
         private System.Windows.Forms.DateTimePicker fromdatetimepicker;
         private System.Windows.Forms.Label fromlabel;
         private System.Windows.Forms.Button datefilterbutton;
+        private System.Windows.Forms.Button printbutton;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
