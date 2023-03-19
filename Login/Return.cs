@@ -26,7 +26,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "' AND isReturned = 0;", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author, borrowTable.borrowDate FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "' AND isReturned = 0;", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -53,7 +53,7 @@ namespace Login
             con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
             con.Open();
 
-            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "' AND isReturned = 0;", con);
+            SqlDataAdapter sqlData = new SqlDataAdapter("SELECT borrowTable.transactionNumber, booksTable.BookID, booksTable.Name,booksTable.Author, borrowTable.borrowDate FROM booksTable INNER JOIN borrowTable ON booksTable.bookid = borrowTable.bookid where borrowTable.username = '" + TextToPass + "' AND isReturned = 0;", con);
             DataTable dtbl = new DataTable();
             sqlData.Fill(dtbl);
 
@@ -92,7 +92,7 @@ namespace Login
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[returnTable] ([username] ,[bookID])VALUES ('" + username + "', " + returnbookidtext.Text + ");", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[returnTable] ([username] ,[bookID], [returnDate])VALUES ('" + username + "', " + returnbookidtext.Text + " , GETDATE());", con);
                 cmd.ExecuteNonQuery();
                 SqlCommand deleteBorrow = new SqlCommand("UPDATE borrowTable SET isReturned = isReturned + 1 WHERE BookID = " + returnbookidtext.Text + ";", con);
                 deleteBorrow.ExecuteNonQuery();

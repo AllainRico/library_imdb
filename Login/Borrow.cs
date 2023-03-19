@@ -89,7 +89,7 @@ namespace Login
                 con.ConnectionString = ("Data Source=DESKTOP-SKI34QJ\\SQLEXPRESS;Initial Catalog=libsysdb;Integrated Security=True");
                 con.Open();
 
-                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowTable] ([username] ,[bookID])VALUES ('" + username + "', "+ borrowbookidtext.Text + ");", con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[borrowTable] ([username] ,[bookID], [borrowDate])VALUES ('" + username + "', "+ borrowbookidtext.Text + ", GETDATE());", con);
                 cmd.ExecuteNonQuery();
                 SqlCommand updateQuantity = new SqlCommand("UPDATE booksTable SET Quantity = Quantity - 1 WHERE BookID = "+ borrowbookidtext.Text + ";", con);
                 updateQuantity.ExecuteNonQuery();
