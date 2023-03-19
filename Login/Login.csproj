@@ -191,6 +191,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="books.ico" />
+    <None Include="Properties\admin-print-report.gif" />
+    <None Include="Properties\admin-display-report.gif" />
     <None Include="Properties\admin-borrowers.png" />
     <None Include="Properties\admin-report.png" />
     <None Include="Properties\admin-books.png" />
