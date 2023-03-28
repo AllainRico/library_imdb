@@ -92,37 +92,62 @@ namespace Login
 
         private void printDocument1_PrintPage(object sender, PrintPageEventArgs e)
         {
-            Font titleFont = new Font("Arial", 16, FontStyle.Bold);
-            Font printFont = new Font("Arial", 10);
+            Font titleFont = new Font("Arial", 21, FontStyle.Bold);
+            Font headerFont = new Font("Arial", 16, FontStyle.Bold);
+            Font printFont = new Font("Arial", 12);
             SolidBrush printBrush = new SolidBrush(Color.Black);
 
             float yPosition = 20;
-            float xPosition = 20;
+            float xPosition = 10;
 
             string title = "Library Transaction Report";
             SizeF titleSize = e.Graphics.MeasureString(title, titleFont);
-            RectangleF titleRect = new RectangleF(xPosition, yPosition, titleSize.Width, titleSize.Height);
-            e.Graphics.DrawRectangle(Pens.Black, titleRect.X, titleRect.Y, titleRect.Width, titleRect.Height);
-            e.Graphics.DrawString(title, titleFont, printBrush, titleRect);
+            RectangleF titleRect = new RectangleF(0, yPosition, e.PageBounds.Width, titleSize.Height);
+            StringFormat titleFormat = new StringFormat();
+            titleFormat.Alignment = StringAlignment.Center;
+            e.Graphics.DrawString(title, titleFont, printBrush, titleRect, titleFormat);
 
             yPosition += titleRect.Height + 10;
-            xPosition = 20;
 
+            // Create a table to hold the data
+            float tableWidth = dataGridView1.Columns.Cast<DataGridViewColumn>().Sum(x => x.Width) + 150;
+            float tableHeight = dataGridView1.Rows.Count * printFont.GetHeight() + headerFont.GetHeight() + 90;
+            float tableX = (e.PageBounds.Width - tableWidth) / 2;
+            RectangleF tableRect = new RectangleF(tableX, yPosition, tableWidth, tableHeight);
+
+            // Print headers
+            xPosition = tableRect.X;
+            for (int j = 0; j < dataGridView1.Columns.Count; j++)
+            {
+                string headerValue = dataGridView1.Columns[j].HeaderText.ToString();
+                SizeF headerSize = e.Graphics.MeasureString(headerValue, headerFont);
+                RectangleF headerRect = new RectangleF(xPosition, yPosition, dataGridView1.Columns[j].Width + 30, headerSize.Height);
+                StringFormat headerFormat = new StringFormat();
+                headerFormat.Alignment = StringAlignment.Center;
+                e.Graphics.DrawString(headerValue, headerFont, printBrush, headerRect, headerFormat);
+                xPosition += dataGridView1.Columns[j].Width + 30 ;
+            }
+
+            yPosition += headerFont.GetHeight();
+
+            // Print rows
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
+                xPosition = tableRect.X;
                 for (int j = 0; j < dataGridView1.Columns.Count; j++)
                 {
                     string cellValue = dataGridView1.Rows[i].Cells[j].Value.ToString();
-
-                    e.Graphics.DrawString(cellValue, printFont, printBrush, xPosition, yPosition);
-
-                    xPosition += dataGridView1.Columns[j].Width;
+                    SizeF cellSize = e.Graphics.MeasureString(cellValue, printFont);
+                    RectangleF cellRect = new RectangleF(xPosition, yPosition, dataGridView1.Columns[j].Width, cellSize.Height);
+                    StringFormat cellFormat = new StringFormat();
+                    cellFormat.Alignment = StringAlignment.Center;
+                    e.Graphics.DrawString(cellValue, printFont, printBrush, cellRect, cellFormat);
+                    xPosition += dataGridView1.Columns[j].Width + 30;
                 }
-
                 yPosition += printFont.GetHeight();
-                xPosition = 20;
             }
         }
+
 
         private void printbutton_Click(object sender, EventArgs e)
         {
